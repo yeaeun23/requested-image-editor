@@ -50,7 +50,7 @@
 
 ![작업10](https://user-images.githubusercontent.com/14077108/137513121-0b585ed7-69c1-4920-b300-1578a37ef2d4.png)
 
-- 작업 후 저장 → 출고
+- 편집 후 저장 → 출고
 
 ![작업11](https://user-images.githubusercontent.com/14077108/137513155-e7765ba1-49ac-44ea-98b2-7d3edc6b0327.png)
 
