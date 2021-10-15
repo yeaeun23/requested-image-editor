@@ -26,7 +26,7 @@
     ![우클릭2](https://user-images.githubusercontent.com/14077108/137505072-b92a1596-6ab2-4021-8d77-c03134012c01.png)
 
 #### 2-2. 우측 뷰
-- 좌측에서 선택된 이미지 전표 상세
+- 좌측에서 선택된 이미지의 전표 상세 (요청사항)
 - 하단 메뉴
 
     ![전표보기3](https://user-images.githubusercontent.com/14077108/137486000-e7cb541e-3511-40d1-a2e7-35abfe2bf6e1.png)
