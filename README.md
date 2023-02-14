@@ -19,33 +19,39 @@
 - 리스트 컬럼 너비, 창 크기, 스플리터 값 저장
 
 ![image](https://user-images.githubusercontent.com/14077108/137449088-5ba2342a-30d6-491b-b642-5b77a0cdb93f.png)
-![image](https://user-images.githubusercontent.com/14077108/218677049-4bb17edc-886a-4511-afa6-36af68cbef51.png)
+![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
 
 #### 2-1. 좌측 뷰
 - 편집 요청된 이미지 리스트
 - 우클릭 메뉴
 
     ![우클릭2](https://user-images.githubusercontent.com/14077108/137505072-b92a1596-6ab2-4021-8d77-c03134012c01.png)
-    ![image](https://user-images.githubusercontent.com/14077108/218678823-94fbf010-c104-477d-bda3-75e08d51fc41.png)
-    ![image](https://user-images.githubusercontent.com/14077108/218679679-3d8986d9-a7f5-4b93-a42b-d9ec67111de6.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
 
 #### 2-2. 우측 뷰
 - 좌측에서 선택된 이미지의 전표 상세 (요청사항)
 - 하단 메뉴
 
     ![전표보기3](https://user-images.githubusercontent.com/14077108/137486000-e7cb541e-3511-40d1-a2e7-35abfe2bf6e1.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218682101-9ae24913-9017-42cd-9361-98f3e3e1254d.png)
 
     + 파일 저장 : 해상도별로 서버 → 로컬 다운로드
 
     ![파일저장2](https://user-images.githubusercontent.com/14077108/137497969-f5bcf803-9621-4812-b61c-037adeb5df77.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png)
 
     + 전표 보기 : 웹뷰, 브라우저에서 열기
 
     ![전표보기2](https://user-images.githubusercontent.com/14077108/137481832-618219aa-6b81-41ed-8b30-7038da035030.png)
-       
+    ![image](https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png)
+
     + 전표 인쇄
 
     ![image](https://user-images.githubusercontent.com/14077108/137460896-f0b2a993-2e0a-45e6-b2f4-64c97ab81e72.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png)
 
 - - -
 
