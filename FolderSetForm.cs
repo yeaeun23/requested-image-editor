@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,9 +7,23 @@ namespace ImageWork
 {
     public partial class FolderSetForm : Form
     {
-        public FolderSetForm()
+        FontDialog fontDialog;
+
+        public FolderSetForm(FontDialog fontDialog)
         {
             InitializeComponent();
+
+            this.fontDialog = fontDialog;
+
+            // 테마
+            if (Form1.IDX_THEME == Form1.IDX_THEME_DARK2)
+                SetTheme(Form1.themeDark2);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT1)
+                SetTheme(Form1.themeLight1);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT2)
+                SetTheme(Form1.themeLight2);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_BLUE)
+                SetTheme(Form1.themeBlue);
         }
 
         private void FolderSetForm_Load(object sender, EventArgs e)
@@ -28,6 +43,86 @@ namespace ImageWork
             toolTip1.SetToolTip(realDownloadFolderBrowse_BTN, "폴더 찾아보기");
             toolTip1.SetToolTip(prevDownloadFolderBrowse_BTN, "폴더 찾아보기");
             toolTip1.SetToolTip(thumbDownloadFolderBrowse_BTN, "폴더 찾아보기");
+
+            // 글꼴
+            originWorkFolderPath_TB.Font = fontDialog.Font;
+            originWorkFolderPath_TB.ForeColor = fontDialog.Color;
+            realWorkFolderPath_TB.Font = fontDialog.Font;
+            realWorkFolderPath_TB.ForeColor = fontDialog.Color;
+            prevWorkFolderPath_TB.Font = fontDialog.Font;
+            prevWorkFolderPath_TB.ForeColor = fontDialog.Color;
+            thumbWorkFolderPath_TB.Font = fontDialog.Font;
+            thumbWorkFolderPath_TB.ForeColor = fontDialog.Color;
+
+            realDownloadFolderPath_TB.Font = fontDialog.Font;
+            realDownloadFolderPath_TB.ForeColor = fontDialog.Color;
+            prevDownloadFolderPath_TB.Font = fontDialog.Font;
+            prevDownloadFolderPath_TB.ForeColor = fontDialog.Color;
+            thumbDownloadFolderPath_TB.Font = fontDialog.Font;
+            thumbDownloadFolderPath_TB.ForeColor = fontDialog.Color;
+        }
+
+        private void SetTheme(Color[] color)
+        {
+            BackColor = color[0];
+
+            originWorkFolderPath_TB.BackColor = color[2];
+            realWorkFolderPath_TB.BackColor = color[2];
+            prevWorkFolderPath_TB.BackColor = color[2];
+            thumbWorkFolderPath_TB.BackColor = color[2];
+            realDownloadFolderPath_TB.BackColor = color[2];
+            prevDownloadFolderPath_TB.BackColor = color[2];
+            thumbDownloadFolderPath_TB.BackColor = color[2];
+            originWorkFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            originWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            originWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            realWorkFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            realWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            realWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            prevWorkFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            prevWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            prevWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            thumbWorkFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            thumbWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            thumbWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            realDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            realDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            realDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            prevDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            prevDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            prevDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            thumbDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = color[2];
+            thumbDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            thumbDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            ok_BTN.FlatAppearance.BorderColor = color[2];
+            ok_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            ok_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            cancel_BTN.FlatAppearance.BorderColor = color[2];
+            cancel_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            cancel_BTN.FlatAppearance.MouseOverBackColor = color[2];
+
+            originWorkFolderBrowse_BTN.BackColor = color[3];
+            realWorkFolderBrowse_BTN.BackColor = color[3];
+            prevWorkFolderBrowse_BTN.BackColor = color[3];
+            thumbWorkFolderBrowse_BTN.BackColor = color[3];
+            realDownloadFolderBrowse_BTN.BackColor = color[3];
+            prevDownloadFolderBrowse_BTN.BackColor = color[3];
+            thumbDownloadFolderBrowse_BTN.BackColor = color[3];
+            ok_BTN.BackColor = color[3];
+            cancel_BTN.BackColor = color[3];
+
+            groupBox1.ForeColor = color[4];
+            groupBox2.ForeColor = color[4];
+            label1.ForeColor = color[4];
+            originWorkFolderBrowse_BTN.ForeColor = color[4];
+            realWorkFolderBrowse_BTN.ForeColor = color[4];
+            prevWorkFolderBrowse_BTN.ForeColor = color[4];
+            thumbWorkFolderBrowse_BTN.ForeColor = color[4];
+            realDownloadFolderBrowse_BTN.ForeColor = color[4];
+            prevDownloadFolderBrowse_BTN.ForeColor = color[4];
+            thumbDownloadFolderBrowse_BTN.ForeColor = color[4];
+            ok_BTN.ForeColor = color[4];
+            cancel_BTN.ForeColor = color[4];
         }
 
         private void originWorkFolderBrowse_BTN_Click(object sender, EventArgs e)

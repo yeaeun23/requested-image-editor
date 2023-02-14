@@ -63,8 +63,7 @@
             // 
             this.refresh_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.refresh_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.refresh_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.refresh_BTN.FlatAppearance.BorderSize = 0;
+            this.refresh_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.refresh_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.refresh_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.refresh_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -73,6 +72,7 @@
             this.refresh_BTN.Name = "refresh_BTN";
             this.refresh_BTN.Size = new System.Drawing.Size(120, 21);
             this.refresh_BTN.TabIndex = 7;
+            this.refresh_BTN.TabStop = false;
             this.refresh_BTN.Text = "새로고침(F5)";
             this.refresh_BTN.UseVisualStyleBackColor = false;
             this.refresh_BTN.Click += new System.EventHandler(this.refresh_BTN_Click);
@@ -81,8 +81,7 @@
             // 
             this.browser_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.browser_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.browser_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.browser_BTN.FlatAppearance.BorderSize = 0;
+            this.browser_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.browser_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.browser_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.browser_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,6 +90,7 @@
             this.browser_BTN.Name = "browser_BTN";
             this.browser_BTN.Size = new System.Drawing.Size(120, 21);
             this.browser_BTN.TabIndex = 6;
+            this.browser_BTN.TabStop = false;
             this.browser_BTN.Text = "브라우저 열기";
             this.browser_BTN.UseVisualStyleBackColor = false;
             this.browser_BTN.Click += new System.EventHandler(this.browser_BTN_Click);
@@ -109,8 +109,7 @@
             // 
             this.close_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.close_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.close_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.close_BTN.FlatAppearance.BorderSize = 0;
+            this.close_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.close_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.close_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.close_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -119,7 +118,8 @@
             this.close_BTN.Name = "close_BTN";
             this.close_BTN.Size = new System.Drawing.Size(100, 21);
             this.close_BTN.TabIndex = 4;
-            this.close_BTN.Text = "닫기";
+            this.close_BTN.TabStop = false;
+            this.close_BTN.Text = "닫 기";
             this.close_BTN.UseVisualStyleBackColor = false;
             this.close_BTN.Click += new System.EventHandler(this.close_BTN_Click);
             // 
@@ -127,8 +127,7 @@
             // 
             this.print_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.print_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.print_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.print_BTN.FlatAppearance.BorderSize = 0;
+            this.print_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.print_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.print_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.print_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -137,13 +136,14 @@
             this.print_BTN.Name = "print_BTN";
             this.print_BTN.Size = new System.Drawing.Size(199, 21);
             this.print_BTN.TabIndex = 3;
+            this.print_BTN.TabStop = false;
             this.print_BTN.Text = "인쇄하기";
             this.print_BTN.UseVisualStyleBackColor = false;
             this.print_BTN.Click += new System.EventHandler(this.print_BTN_Click);
             // 
             // statusStrip
             // 
-            this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.zoom_BTN});

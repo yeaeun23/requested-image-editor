@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ImageWork
@@ -16,11 +17,53 @@ namespace ImageWork
 
             this.id = id;
             url = Form1.printUrl + id;
+
+            // 테마
+            if (Form1.IDX_THEME == Form1.IDX_THEME_DARK2)
+                SetTheme(Form1.themeDark2);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT1)
+                SetTheme(Form1.themeLight1);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT2)
+                SetTheme(Form1.themeLight2);
+            else if (Form1.IDX_THEME == Form1.IDX_THEME_BLUE)
+                SetTheme(Form1.themeBlue);
         }
 
         private void PrintPrevForm_Load(object sender, EventArgs e)
         {
-            Browse();                                 
+            Browse();
+        }
+
+        private void SetTheme(Color[] color)
+        {
+            BackColor = color[0];
+            toolStripStatusLabel.BackColor = color[0];
+            zoom_BTN.BackColor = color[0];
+
+            browser_BTN.FlatAppearance.BorderColor = color[2];
+            browser_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            browser_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            refresh_BTN.FlatAppearance.BorderColor = color[2];
+            refresh_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            refresh_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            print_BTN.FlatAppearance.BorderColor = color[2];
+            print_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            print_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            close_BTN.FlatAppearance.BorderColor = color[2];
+            close_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            close_BTN.FlatAppearance.MouseOverBackColor = color[2];
+
+            browser_BTN.BackColor = color[3];
+            refresh_BTN.BackColor = color[3];
+            print_BTN.BackColor = color[3];
+            close_BTN.BackColor = color[3];
+
+            toolStripStatusLabel.ForeColor = color[4];
+            browser_BTN.ForeColor = color[4];
+            refresh_BTN.ForeColor = color[4];
+            print_BTN.ForeColor = color[4];
+            close_BTN.ForeColor = color[4];
+            zoom_BTN.ForeColor = color[4];
         }
 
         // 웹브라우저 로딩
@@ -109,7 +152,7 @@ namespace ImageWork
 
         // 100%
         private void zoom_4_Click(object sender, EventArgs e)
-        {            
+        {
             SetZoom(sender);
         }
 
@@ -128,7 +171,7 @@ namespace ImageWork
             }
 
             zoom_BTN.Text = rate;
-            webBrowser.Document.Body.Style = "zoom: " + rate + ";";            
-        }        
+            webBrowser.Document.Body.Style = "zoom: " + rate + ";";
+        }
     }
 }

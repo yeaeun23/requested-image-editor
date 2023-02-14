@@ -35,9 +35,9 @@
             this.pw_TB = new System.Windows.Forms.TextBox();
             this.id_TB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -45,12 +45,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.login_BTN);
             this.groupBox1.Controls.Add(this.idSave_CHK);
             this.groupBox1.Controls.Add(this.pw_TB);
             this.groupBox1.Controls.Add(this.id_TB);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 120);
@@ -61,8 +61,7 @@
             // 
             this.login_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.login_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.login_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.login_BTN.FlatAppearance.BorderSize = 0;
+            this.login_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.login_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.login_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.login_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -90,11 +89,13 @@
             // pw_TB
             // 
             this.pw_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.pw_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pw_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pw_TB.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pw_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.pw_TB.Location = new System.Drawing.Point(100, 57);
+            this.pw_TB.Multiline = true;
             this.pw_TB.Name = "pw_TB";
-            this.pw_TB.PasswordChar = '●';
+            this.pw_TB.PasswordChar = '⦁';
             this.pw_TB.Size = new System.Drawing.Size(150, 21);
             this.pw_TB.TabIndex = 5;
             this.pw_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pw_TB_KeyPress);
@@ -102,9 +103,11 @@
             // id_TB
             // 
             this.id_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.id_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.id_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.id_TB.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.id_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.id_TB.Location = new System.Drawing.Point(100, 27);
+            this.id_TB.Multiline = true;
             this.id_TB.Name = "id_TB";
             this.id_TB.Size = new System.Drawing.Size(150, 21);
             this.id_TB.TabIndex = 1;
@@ -120,19 +123,9 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "비밀번호:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label3.Location = new System.Drawing.Point(31, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "아 이 디:";
-            // 
             // statusStrip
             // 
-            this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 149);
@@ -147,13 +140,23 @@
             this.toolStripStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.toolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabel.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.toolStripStatusLabel.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripStatusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripStatusLabel.Size = new System.Drawing.Size(374, 17);
             this.toolStripStatusLabel.Spring = true;
             this.toolStripStatusLabel.Text = "Ver 0.0.0";
             this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label2.Location = new System.Drawing.Point(31, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "아 이 디:";
             // 
             // LoginForm
             // 
@@ -168,7 +171,7 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "화상 작업";
+            this.Text = "화상 작업기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
@@ -187,9 +190,9 @@
         private System.Windows.Forms.TextBox pw_TB;
         private System.Windows.Forms.TextBox id_TB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Button login_BTN;
+        private System.Windows.Forms.Label label2;
     }
 }

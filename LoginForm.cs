@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,6 +14,43 @@ namespace ImageWork
         public LoginForm()
         {
             InitializeComponent();
+
+            // 테마
+            if (Form1.GetValue("THEME", "IDX_THEME") != "")
+            {
+                Form1.IDX_THEME = Convert.ToInt32(Form1.GetValue("THEME", "IDX_THEME"));
+
+                if (Form1.IDX_THEME == Form1.IDX_THEME_DARK2)
+                    SetTheme(Form1.themeDark2);
+                else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT1)
+                    SetTheme(Form1.themeLight1);
+                else if (Form1.IDX_THEME == Form1.IDX_THEME_LIGHT2)
+                    SetTheme(Form1.themeLight2);
+                else if (Form1.IDX_THEME == Form1.IDX_THEME_BLUE)
+                    SetTheme(Form1.themeBlue);
+            }
+        }
+
+        private void SetTheme(Color[] color)
+        {
+            BackColor = color[0];
+            toolStripStatusLabel.BackColor = color[0];
+
+            id_TB.BackColor = color[2];
+            pw_TB.BackColor = color[2];
+            login_BTN.FlatAppearance.BorderColor = color[2];
+            login_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            login_BTN.FlatAppearance.MouseOverBackColor = color[2];
+
+            login_BTN.BackColor = color[3];
+
+            id_TB.ForeColor = color[4];
+            pw_TB.ForeColor = color[4];
+            login_BTN.ForeColor = color[4];
+            toolStripStatusLabel.ForeColor = color[4];
+            label2.ForeColor = color[4];
+            label1.ForeColor = color[4];
+            idSave_CHK.ForeColor = color[4];
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -25,7 +63,7 @@ namespace ImageWork
             if (Form1.GetValue("LOGIN", "ID_SAVE") == "TRUE")
             {
                 idSave_CHK.Checked = true;
-                
+
                 id_TB.Text = Form1.GetValue("LOGIN", "ID");
             }
 
@@ -40,12 +78,12 @@ namespace ImageWork
         {
             if (id_TB.Text == "")
             {
-                MessageBox.Show( "아이디를 입력해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("아이디를 입력해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ActiveControl = id_TB;
             }
             else if (pw_TB.Text == "")
             {
-                MessageBox.Show( "비밀번호를 입력해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("비밀번호를 입력해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ActiveControl = pw_TB;
             }
             else
@@ -66,24 +104,23 @@ namespace ImageWork
                             Form1.empNo = id_TB.Text;
                             Form1.empName = dt.Rows[0]["V_USERNAME"].ToString();
                             Form1.empCode = dt.Rows[0]["ID_USERCODE"].ToString();
-                            //Form1.empPubpart = dt.Rows[0]["ID_PUBPART"].ToString();
 
                             DialogResult = DialogResult.OK;
                         }
                         else
                         {
-                            MessageBox.Show( "로그인 권한이 없는 사용자입니다.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("로그인 권한이 없는 사용자입니다.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                     }
                     else
                     {
-                        MessageBox.Show( "비밀번호를 확인해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("비밀번호를 확인해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         ActiveControl = pw_TB;
                     }
                 }
                 else
                 {
-                    MessageBox.Show( "아이디(사번 7자리)를 확인해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("아이디(사번 7자리)를 확인해 주세요.", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     ActiveControl = id_TB;
                 }
             }

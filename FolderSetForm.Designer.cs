@@ -69,7 +69,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.label1.Location = new System.Drawing.Point(112, 311);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(450, 11);
@@ -100,8 +100,7 @@
             // 
             this.thumbDownloadFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.thumbDownloadFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.thumbDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.thumbDownloadFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.thumbDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbDownloadFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,6 +109,7 @@
             this.thumbDownloadFolderBrowse_BTN.Name = "thumbDownloadFolderBrowse_BTN";
             this.thumbDownloadFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.thumbDownloadFolderBrowse_BTN.TabIndex = 78;
+            this.thumbDownloadFolderBrowse_BTN.TabStop = false;
             this.thumbDownloadFolderBrowse_BTN.Text = "...";
             this.thumbDownloadFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.thumbDownloadFolderBrowse_BTN.Click += new System.EventHandler(this.thumbDownloadFolderBrowse_BTN_Click);
@@ -118,8 +118,7 @@
             // 
             this.prevDownloadFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.prevDownloadFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.prevDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.prevDownloadFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.prevDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevDownloadFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -128,6 +127,7 @@
             this.prevDownloadFolderBrowse_BTN.Name = "prevDownloadFolderBrowse_BTN";
             this.prevDownloadFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.prevDownloadFolderBrowse_BTN.TabIndex = 79;
+            this.prevDownloadFolderBrowse_BTN.TabStop = false;
             this.prevDownloadFolderBrowse_BTN.Text = "...";
             this.prevDownloadFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.prevDownloadFolderBrowse_BTN.Click += new System.EventHandler(this.prevDownloadFolderBrowse_BTN_Click);
@@ -135,19 +135,20 @@
             // thumbDownloadFolderPath_TB
             // 
             this.thumbDownloadFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.thumbDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thumbDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.thumbDownloadFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.thumbDownloadFolderPath_TB.Location = new System.Drawing.Point(98, 90);
+            this.thumbDownloadFolderPath_TB.Multiline = true;
             this.thumbDownloadFolderPath_TB.Name = "thumbDownloadFolderPath_TB";
             this.thumbDownloadFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.thumbDownloadFolderPath_TB.TabIndex = 76;
+            this.thumbDownloadFolderPath_TB.TabStop = false;
             // 
             // realDownloadFolderBrowse_BTN
             // 
             this.realDownloadFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.realDownloadFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.realDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.realDownloadFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.realDownloadFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realDownloadFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realDownloadFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realDownloadFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -156,6 +157,7 @@
             this.realDownloadFolderBrowse_BTN.Name = "realDownloadFolderBrowse_BTN";
             this.realDownloadFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.realDownloadFolderBrowse_BTN.TabIndex = 84;
+            this.realDownloadFolderBrowse_BTN.TabStop = false;
             this.realDownloadFolderBrowse_BTN.Text = "...";
             this.realDownloadFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.realDownloadFolderBrowse_BTN.Click += new System.EventHandler(this.realDownloadFolderBrowse_BTN_Click);
@@ -163,22 +165,26 @@
             // prevDownloadFolderPath_TB
             // 
             this.prevDownloadFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.prevDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prevDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.prevDownloadFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.prevDownloadFolderPath_TB.Location = new System.Drawing.Point(98, 60);
+            this.prevDownloadFolderPath_TB.Multiline = true;
             this.prevDownloadFolderPath_TB.Name = "prevDownloadFolderPath_TB";
             this.prevDownloadFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.prevDownloadFolderPath_TB.TabIndex = 77;
+            this.prevDownloadFolderPath_TB.TabStop = false;
             // 
             // realDownloadFolderPath_TB
             // 
             this.realDownloadFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.realDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.realDownloadFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.realDownloadFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.realDownloadFolderPath_TB.Location = new System.Drawing.Point(98, 30);
+            this.realDownloadFolderPath_TB.Multiline = true;
             this.realDownloadFolderPath_TB.Name = "realDownloadFolderPath_TB";
             this.realDownloadFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.realDownloadFolderPath_TB.TabIndex = 83;
+            this.realDownloadFolderPath_TB.TabStop = false;
             // 
             // label3
             // 
@@ -233,8 +239,7 @@
             // 
             this.thumbWorkFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.thumbWorkFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.thumbWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.thumbWorkFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.thumbWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.thumbWorkFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -243,6 +248,7 @@
             this.thumbWorkFolderBrowse_BTN.Name = "thumbWorkFolderBrowse_BTN";
             this.thumbWorkFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.thumbWorkFolderBrowse_BTN.TabIndex = 65;
+            this.thumbWorkFolderBrowse_BTN.TabStop = false;
             this.thumbWorkFolderBrowse_BTN.Text = "...";
             this.thumbWorkFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.thumbWorkFolderBrowse_BTN.Click += new System.EventHandler(this.thumbWorkFolderBrowse_BTN_Click);
@@ -251,8 +257,7 @@
             // 
             this.prevWorkFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.prevWorkFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.prevWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.prevWorkFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.prevWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.prevWorkFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -261,6 +266,7 @@
             this.prevWorkFolderBrowse_BTN.Name = "prevWorkFolderBrowse_BTN";
             this.prevWorkFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.prevWorkFolderBrowse_BTN.TabIndex = 65;
+            this.prevWorkFolderBrowse_BTN.TabStop = false;
             this.prevWorkFolderBrowse_BTN.Text = "...";
             this.prevWorkFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.prevWorkFolderBrowse_BTN.Click += new System.EventHandler(this.prevWorkFolderBrowse_BTN_Click);
@@ -268,19 +274,20 @@
             // thumbWorkFolderPath_TB
             // 
             this.thumbWorkFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.thumbWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thumbWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.thumbWorkFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.thumbWorkFolderPath_TB.Location = new System.Drawing.Point(98, 120);
+            this.thumbWorkFolderPath_TB.Multiline = true;
             this.thumbWorkFolderPath_TB.Name = "thumbWorkFolderPath_TB";
             this.thumbWorkFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.thumbWorkFolderPath_TB.TabIndex = 64;
+            this.thumbWorkFolderPath_TB.TabStop = false;
             // 
             // realWorkFolderBrowse_BTN
             // 
             this.realWorkFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.realWorkFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.realWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.realWorkFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.realWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.realWorkFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -289,6 +296,7 @@
             this.realWorkFolderBrowse_BTN.Name = "realWorkFolderBrowse_BTN";
             this.realWorkFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.realWorkFolderBrowse_BTN.TabIndex = 75;
+            this.realWorkFolderBrowse_BTN.TabStop = false;
             this.realWorkFolderBrowse_BTN.Text = "...";
             this.realWorkFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.realWorkFolderBrowse_BTN.Click += new System.EventHandler(this.realWorkFolderBrowse_BTN_Click);
@@ -296,22 +304,26 @@
             // prevWorkFolderPath_TB
             // 
             this.prevWorkFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.prevWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prevWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.prevWorkFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.prevWorkFolderPath_TB.Location = new System.Drawing.Point(98, 90);
+            this.prevWorkFolderPath_TB.Multiline = true;
             this.prevWorkFolderPath_TB.Name = "prevWorkFolderPath_TB";
             this.prevWorkFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.prevWorkFolderPath_TB.TabIndex = 64;
+            this.prevWorkFolderPath_TB.TabStop = false;
             // 
             // realWorkFolderPath_TB
             // 
             this.realWorkFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.realWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.realWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.realWorkFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.realWorkFolderPath_TB.Location = new System.Drawing.Point(98, 60);
+            this.realWorkFolderPath_TB.Multiline = true;
             this.realWorkFolderPath_TB.Name = "realWorkFolderPath_TB";
             this.realWorkFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.realWorkFolderPath_TB.TabIndex = 74;
+            this.realWorkFolderPath_TB.TabStop = false;
             // 
             // label6
             // 
@@ -353,8 +365,7 @@
             // 
             this.originWorkFolderBrowse_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.originWorkFolderBrowse_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.originWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.originWorkFolderBrowse_BTN.FlatAppearance.BorderSize = 0;
+            this.originWorkFolderBrowse_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.originWorkFolderBrowse_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.originWorkFolderBrowse_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.originWorkFolderBrowse_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -363,6 +374,7 @@
             this.originWorkFolderBrowse_BTN.Name = "originWorkFolderBrowse_BTN";
             this.originWorkFolderBrowse_BTN.Size = new System.Drawing.Size(30, 21);
             this.originWorkFolderBrowse_BTN.TabIndex = 63;
+            this.originWorkFolderBrowse_BTN.TabStop = false;
             this.originWorkFolderBrowse_BTN.Text = "...";
             this.originWorkFolderBrowse_BTN.UseVisualStyleBackColor = false;
             this.originWorkFolderBrowse_BTN.Click += new System.EventHandler(this.originWorkFolderBrowse_BTN_Click);
@@ -370,19 +382,20 @@
             // originWorkFolderPath_TB
             // 
             this.originWorkFolderPath_TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.originWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.originWorkFolderPath_TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.originWorkFolderPath_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.originWorkFolderPath_TB.Location = new System.Drawing.Point(98, 30);
+            this.originWorkFolderPath_TB.Multiline = true;
             this.originWorkFolderPath_TB.Name = "originWorkFolderPath_TB";
             this.originWorkFolderPath_TB.Size = new System.Drawing.Size(400, 21);
             this.originWorkFolderPath_TB.TabIndex = 1;
+            this.originWorkFolderPath_TB.TabStop = false;
             // 
             // ok_BTN
             // 
             this.ok_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.ok_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ok_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.ok_BTN.FlatAppearance.BorderSize = 0;
+            this.ok_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ok_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ok_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ok_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -391,6 +404,7 @@
             this.ok_BTN.Name = "ok_BTN";
             this.ok_BTN.Size = new System.Drawing.Size(75, 21);
             this.ok_BTN.TabIndex = 26;
+            this.ok_BTN.TabStop = false;
             this.ok_BTN.Text = "확 인";
             this.ok_BTN.UseVisualStyleBackColor = false;
             this.ok_BTN.Click += new System.EventHandler(this.ok_BTN_Click);
@@ -399,8 +413,7 @@
             // 
             this.cancel_BTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.cancel_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cancel_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.cancel_BTN.FlatAppearance.BorderSize = 0;
+            this.cancel_BTN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.cancel_BTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.cancel_BTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.cancel_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -409,6 +422,7 @@
             this.cancel_BTN.Name = "cancel_BTN";
             this.cancel_BTN.Size = new System.Drawing.Size(75, 21);
             this.cancel_BTN.TabIndex = 62;
+            this.cancel_BTN.TabStop = false;
             this.cancel_BTN.Text = "취 소";
             this.cancel_BTN.UseVisualStyleBackColor = false;
             this.cancel_BTN.Click += new System.EventHandler(this.cancel_BTN_Click);
