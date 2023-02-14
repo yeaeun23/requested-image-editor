@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWork", ".\ImageWork.csproj", "{35B66A79-53FC-4678-9E13-3B1A7D0D2602}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWork", "ImageWork\ImageWork.csproj", "{35B66A79-53FC-4678-9E13-3B1A7D0D2602}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
