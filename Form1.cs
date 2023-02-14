@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,7 +9,6 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Reflection;
 using System.Linq;
 using System.Diagnostics;
 
@@ -27,54 +26,104 @@ namespace ImageWork
         string iconPath_chulgo_yes = "";
         string iconPath_photoshop = "";
 
-        string sortAscMark = "▲";
-        string sortDescMark = "▼";
+        //string sortAscMark = "▲";
+        //string sortDescMark = "▼";
 
         string MYUN = "전체";
-        bool isMyunTotalChecked;    // 면 전체 선택 여부
-        int imgPerPage = 50;        // 페이지 당 이미지 개수
-        int imgTotalCnt = 0;        // 전체 이미지 개수
-        int imgSelectedIdx = -1;    // 선택된 이미지 idx             
+        bool isMyunTotalChecked;        // 면 전체 선택 여부
+        int imgPerPage = 18;            // 페이지 당 이미지 개수
+        int imgTotalCnt = 0;            // 전체 이미지 개수
+        int imgSelectedIdx = -1;        // 선택된 이미지 idx             
+        int pageSelectedIdx = -1;       // 선택된 페이지 idx   
+        bool isInitBtnClicked = false;  // 검색 초기화 버튼 클릭 여부: Search() 여러번 방지
 
         public static string empNo = "1234567";
         public static string empName = "테스트";
         public static string empCode = "123";
 
-        public static string epsExtMark = "_R_0.eps";
-        public static string realExtMark = "_R_0.jpg";
-        public static string prevExtMark = "_P_0.jpg";
-        public static string thumbExtMark = "_T_0.jpg";
-
         public static string iniFilePath = Application.StartupPath + "\\ImageWork.ini";
 
         public static string downloadUrl = GetValue("URL", "DOWNLOAD");
-        public static string uploadUrl = GetValue("URL", "UPLOAD");
+        public static string uploadUrl1 = GetValue("URL", "UPLOAD1");
+        public static string uploadUrl2 = GetValue("URL", "UPLOAD2");
+        public static string copyUrl = GetValue("URL", "COPY");
         public static string printUrl = GetValue("URL", "PRINT");
 
         public static string originWorkFolderPath = GetValue("FOLDER_PATH", "ORIGIN_WORK");
         public static string realWorkFolderPath = GetValue("FOLDER_PATH", "REAL_WORK");
         public static string prevWorkFolderPath = GetValue("FOLDER_PATH", "PREV_WORK");
         public static string thumbWorkFolderPath = GetValue("FOLDER_PATH", "THUMB_WORK");
+        public static string eventWorkFolderPath = GetValue("FOLDER_PATH", "EVENT_WORK");
 
         public static string realDownloadFolderPath = GetValue("FOLDER_PATH", "REAL_DOWNLOAD");
         public static string prevDownloadFolderPath = GetValue("FOLDER_PATH", "PREV_DOWNLOAD");
         public static string thumbDownloadFolderPath = GetValue("FOLDER_PATH", "THUMB_DOWNLOAD");
 
-        public static int IDX_OFILENAME = 0;      // 파일명
-        public static int IDX_TITLE = 1;          // 제목
-        public static int IDX_AUTHOR = 2;         // 작성자
-        public static int IDX_PUBDATE = 3;        // 출고일
-        public static int IDX_BEFOREPUBDATE = 4;  // 게재일
-        public static int IDX_REGTIME = 5;        // 등록일
-        public static int IDX_PAN = 6;            // 판
-        public static int IDX_PAGE = 7;           // 면
-        public static int IDX_BEFORESTATE = 8;    // 상태
-        public static int IDX_ID = 9;             // 아이디
-        public static int IDX_CAPTION = 10;       // 내용
-        public static int IDX_RETOUCH = 11;       // 요청사항
+        public static int IDX_OFILENAME = 0;        // 파일명
+        public static int IDX_TITLE = 1;            // 제목
+        public static int IDX_EXTENSION = 2;        // 확장자
+        public static int IDX_EXTENSION_ORG = 3;    // 확장자(o)
+        public static int IDX_AUTHOR = 4;           // 등록자
+        public static int IDX_PUBDATE = 5;          // 출고일
+        public static int IDX_BEFOREPUBDATE = 6;    // 게재일
+        public static int IDX_REGTIME = 7;          // 등록일
+        public static int IDX_PAN = 8;              // 판
+        public static int IDX_PAGE = 9;             // 면
+        public static int IDX_BEFORESTATE = 10;     // 상태
+        public static int IDX_ID = 11;              // 아이디
+        public static int IDX_CAPTION = 12;         // 내용
+        public static int IDX_RETOUCH = 13;         // 요청사항
 
-        public static int IDX_THEME_BG = 0;    // 배경
-        public static int IDX_THEME_ICON = 0;  // 아이콘        
+        public static int IDX_THEME_BG = 0;         // 배경
+        public static int IDX_THEME_ICON = 0;       // 아이콘   
+        public static int IDX_THEME = 0;            // 테마
+        public static int IDX_THEME_DARK1 = 0;
+        public static int IDX_THEME_DARK2 = 1;
+        public static int IDX_THEME_LIGHT1 = 2;
+        public static int IDX_THEME_LIGHT2 = 3;
+        public static int IDX_THEME_BLUE = 4;
+        public static Color[] themeDark1 = {
+            Color.FromArgb(83, 83, 83),
+            Color.FromArgb(40, 40, 40),
+            Color.FromArgb(56, 56, 56),
+            Color.FromArgb(69, 69, 69),
+            Color.FromArgb(240, 240, 240) // 글자색
+        };
+        public static Color[] themeDark2 = {
+            Color.FromArgb(50, 50, 50),
+            Color.FromArgb(25, 25, 25),
+            Color.FromArgb(31, 31, 31),
+            Color.FromArgb(41, 41, 41),
+            Color.FromArgb(225, 225, 225)
+        };
+        public static Color[] themeLight1 = {
+            Color.FromArgb(240, 240, 240),
+            Color.FromArgb(147, 147, 147),
+            Color.FromArgb(191, 191, 191),
+            Color.FromArgb(252, 252, 252),
+            Color.FromArgb(41, 41, 41)
+        };
+        public static Color[] themeLight2 = {
+            Color.FromArgb(184, 184, 184),
+            Color.FromArgb(108, 108, 108),
+            Color.FromArgb(128, 128, 128),
+            Color.FromArgb(209, 209, 209),
+            Color.FromArgb(51, 51, 51)
+        };
+        public static Color[] themeBlue = {
+            Color.FromArgb(57, 88, 109),
+            Color.FromArgb(29, 43, 54),
+            Color.FromArgb(40, 59, 74),
+            Color.FromArgb(40, 59, 74),
+            Color.FromArgb(240, 240, 240)
+        };
+
+        WorkForm workForm = null;                   // 꼬마창
+
+        string srcDirName = @"\\dapsn1.seoul.co.kr\PatchImageWork";
+        string destDirName = @"C:\화상작업기";
+        string srcVer = "";
+        string destVer = "";
 
         // ini 파일 쓰기
         [DllImport("kernel32")]
@@ -84,11 +133,28 @@ namespace ImageWork
         public static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
         // 창 활성화
+        // nCmdShow: 1-NORMAL, 2-MINIMIZED, 3-MAXIMIZED
         [DllImport("user32.dll")]
         private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
         // 창 최상위로
         [DllImport("user32.dll")]
         private static extern int SetForegroundWindow(IntPtr hWnd);
+
+        // 업데이트 로직
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct NETRESOURCE
+        {
+            public uint dwScope;
+            public uint dwType;
+            public uint dwDisplayType;
+            public uint dwUsage;
+            public string lpLocalName;
+            public string lpRemoteName;
+            public string lpComment;
+            public string lpProvider;
+        }
+        [DllImport("mpr.dll", CharSet = CharSet.Auto)]
+        public static extern int WNetUseConnection(IntPtr hwndOwner, [MarshalAs(UnmanagedType.Struct)] ref NETRESOURCE lpNetResource, string lpPassword, string lpUserID, uint dwFlags, StringBuilder lpAccessName, ref int lpBufferSize, out uint lpResult);
 
         public static void WriteValue(string Section, string Key, string Value)
         {
@@ -97,16 +163,17 @@ namespace ImageWork
 
         public static string GetValue(string Section, string Key)
         {
-            GetPrivateProfileString(Section, Key, string.Empty, sb, 255, Application.StartupPath + "\\ImageWork.ini");
+            GetPrivateProfileString(Section, Key, string.Empty, sb, 255, iniFilePath);
             return sb.ToString();
         }
 
         public Form1()
         {
-            //Delay(2000);
+            Util.Delay(2000);
 
             // 열려있는 앱 확인
             Process[] processList = Process.GetProcessesByName("ImageWork");
+
             if (processList.Length == 2)
             {
                 if (processList[0].StartTime > processList[1].StartTime)
@@ -125,15 +192,15 @@ namespace ImageWork
             else
             {
                 // 버전 체크
-                //VersionCheck();
+                VersionCheck();
 
-                //if (srcVer != destVer)  // 버전이 다르면
-                //{
-                //    // 업데이트
-                //    Process.Start(destDirName + @"\UpdateImageWork.exe");
-                //    Process.GetCurrentProcess().Kill();
-                //}
-                //else                    // 버전이 같으면
+                if (srcVer != destVer)  // 버전이 다르면
+                {
+                    // 업데이트
+                    Process.Start(destDirName + @"\UpdateImageWork.exe");
+                    Process.GetCurrentProcess().Kill();
+                }
+                else                    // 버전이 같으면
                 {
                     // 로그인
                     LoginForm loginForm = new LoginForm();
@@ -142,6 +209,16 @@ namespace ImageWork
                     {
                         Util.SaveLog("Login: " + empNo);
                         InitializeComponent();
+
+                        // 테마                        
+                        if (IDX_THEME == IDX_THEME_DARK2)
+                            SetTheme(IDX_THEME_DARK2, themeDark2, false);
+                        else if (IDX_THEME == IDX_THEME_LIGHT1)
+                            SetTheme(IDX_THEME_LIGHT1, themeLight1, false);
+                        else if (IDX_THEME == IDX_THEME_LIGHT2)
+                            SetTheme(IDX_THEME_LIGHT2, themeLight2, false);
+                        else if (IDX_THEME == IDX_THEME_BLUE)
+                            SetTheme(IDX_THEME_BLUE, themeBlue, false);
                     }
                     else
                     {
@@ -151,12 +228,47 @@ namespace ImageWork
             }
         }
 
+        private void VersionCheck()
+        {
+            int res = netUse();
+
+            if (res != 0 && res != 1219)
+            {
+                MessageBox.Show(new Form { TopMost = true }, "서버에 연결할 수 없습니다. (Error Code: " + res.ToString() + ")", "업데이트 확인", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                srcVer = File.ReadAllText(srcDirName + @"\ImageWork_Ver.txt");
+
+                GetPrivateProfileString("VERSION", "VER", "", sb, sb.Capacity, destDirName + @"\ImageWork.ini");
+                if (sb.ToString() != "")
+                    destVer = sb.ToString();
+            }
+        }
+
+        private int netUse()
+        {
+            int capacity = 64;
+            uint resultFlags = 0;
+            StringBuilder sb = new StringBuilder(capacity);
+            NETRESOURCE ns = new NETRESOURCE();
+
+            ns.dwType = 1;           // 공유 디스크
+            ns.lpLocalName = null;   // 로컬 드라이브
+            ns.lpRemoteName = srcDirName;
+            ns.lpProvider = null;
+
+            return WNetUseConnection(IntPtr.Zero, ref ns, "!!updateuser@@", "dapsn1\\updateuser", 0, sb, ref capacity, out resultFlags);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 메뉴 배경
-            //toolStrip.Renderer = new MyRenderer();
+            // 포토샵 실행
+            Type type = Type.GetTypeFromProgID("Photoshop.Application");
+            photoshop = (Photoshop.Application)Activator.CreateInstance(type, true);
 
-            // 상태 표시줄
+            // 상태표시줄
             toolStripStatusLabel1.Text = empName + "(" + empNo + ")님이 사용중입니다.";
             toolStripStatusLabel2.Text = "Ver " + GetValue("VERSION", "VER");
 
@@ -193,13 +305,17 @@ namespace ImageWork
 
             // 이미지 배경
             if (GetValue("THEME", "IDX_BG") != "")
+            {
                 IDX_THEME_BG = Convert.ToInt32(GetValue("THEME", "IDX_BG"));
+                SetThemeBG(IDX_THEME_BG, false);
+            }
 
             // 아이콘
             if (GetValue("THEME", "IDX_ICON") != "")
+            {
                 IDX_THEME_ICON = Convert.ToInt32(GetValue("THEME", "IDX_ICON"));
-
-            SetIconPath();
+                SetThemeIcon(IDX_THEME_ICON, false);
+            }
 
             // 폴더
             if (!Directory.Exists(originWorkFolderPath))
@@ -214,6 +330,15 @@ namespace ImageWork
             if (!Directory.Exists(thumbWorkFolderPath))
                 Directory.CreateDirectory(thumbWorkFolderPath);
 
+            if (!Directory.Exists(eventWorkFolderPath))
+                Directory.CreateDirectory(eventWorkFolderPath);
+
+            // 작업 파일 삭제
+            deleteWorkFile(originWorkFolderPath);
+            deleteWorkFile(realWorkFolderPath);
+            deleteWorkFile(prevWorkFolderPath);
+            deleteWorkFile(thumbWorkFolderPath);
+
             // 스플리터     
             if (GetValue("SPLITTER", "FORM_V") != "")
                 splitContainer2.SplitterDistance = Convert.ToInt32(GetValue("SPLITTER", "FORM_V"));
@@ -227,21 +352,35 @@ namespace ImageWork
             if (GetValue("SPLITTER", "COL_HEADER") != "")
                 imgGridView.ColumnHeadersHeight = Convert.ToInt32(GetValue("SPLITTER", "COL_HEADER"));
 
+            if (GetValue("SPLITTER", "COL_HEADER2") != "")
+                imgGridView2.ColumnHeadersHeight = Convert.ToInt32(GetValue("SPLITTER", "COL_HEADER2"));
+
             for (int i = 0; i < imgGridView.Columns.Count; i++)
             {
                 if (GetValue("SPLITTER", "COL" + i) != "")
                     imgGridView.Columns[i].Width = Convert.ToInt32(GetValue("SPLITTER", "COL" + i));
             }
 
+            for (int i = 0; i < imgGridView2.Columns.Count; i++)
+            {
+                if (GetValue("SPLITTER", "COL" + (i + 20)) != "")
+                    imgGridView2.Columns[i].Width = Convert.ToInt32(GetValue("SPLITTER", "COL" + (i + 20)));
+            }
+
+            // 꼬마창 위치 초기화
+            WriteValue("POS", "WORKFORM_X", "50");
+            WriteValue("POS", "WORKFORM_Y", "50");
+
             // 컨트롤 로드
             SetMediaCBList();
-            SetPanCBList();
+            Util.SetPanCBList(pan_CB);
             SetMyunCBList();
 
             // 검색 초기화
             Init();
         }
 
+        // 아이콘 경로 설정
         private void SetIconPath()
         {
             if (IDX_THEME_ICON == 1 || IDX_THEME_ICON == 2)
@@ -261,14 +400,16 @@ namespace ImageWork
 
             if (!(File.Exists(iconPath_caption) && File.Exists(iconPath_chulgo_no) && File.Exists(iconPath_chulgo_yes) && File.Exists(iconPath_photoshop)))
             {
-                MessageBox.Show("아이콘 파일을 확인해 주세요.", "아이콘 설정", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(new Form { TopMost = true }, "아이콘 파일을 확인해 주세요.", "아이콘 설정", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        public void Init()
+        // 초기화
+        private void Init()
         {
             // 컨트롤 값 초기화
-            media_CB.SelectedIndex = 1;
+            media_CB.SelectedIndex = 0;
+            date_RB1.Checked = true;
             date_CAL1.Value = DateTime.Now.AddDays(1);
             date_CAL2.Value = DateTime.Now.AddDays(1);
             pan_CB.SelectedIndex = 0;
@@ -278,6 +419,9 @@ namespace ImageWork
             myun_TV.Hide();
 
             state_CB.SelectedIndex = 0;
+
+            imgSelectedIdx = -1;
+            pageSelectedIdx = -1;
 
             Search();
         }
@@ -289,17 +433,17 @@ namespace ImageWork
             SetPageCBList();
 
             if (bgWorker.IsBusy)
-            {
-                bgWorker.Abort();
-                bgWorker.Dispose();
-
-                bgWorker = new AbortableBackgroundWorker();
-                bgWorker.DoWork += bgWorker_DoWork;
-            }
+                return;
 
             string sql = GetSearchSql();
+
+            //if (sql != "")
+            //{
             SetListView(sql);
             SetGridView(sql);
+            SetGridView2();
+
+            bgWorker.RunWorkerAsync();
 
             // 마지막 선택 이미지
             if (imgSelectedIdx > -1 && imgSelectedIdx < imgListView.Items.Count)
@@ -316,6 +460,11 @@ namespace ImageWork
                 // 프리뷰
                 ShowPreview();
             }
+            //}
+            //else
+            //{
+            //    return;
+            //}
         }
 
         private string GetSortSql()
@@ -345,7 +494,7 @@ namespace ImageWork
             //        return "V_OFILENAME " + order;
             //    case 1: // 제목
             //        return "V_TITLE " + order;
-            //    case 2: // 작성자
+            //    case 2: // 등록자
             //        return "V_AUTHOR " + order;
             //    case 3: // 출고일
             //        return "D_PUBDATE " + order;
@@ -365,7 +514,7 @@ namespace ImageWork
             //        return "V_OFILENAME " + order;
             //}
 
-            return "V_OFILENAME ASC";
+            return "ID_FIM DESC";
         }
 
         // 검색 쿼리 생성
@@ -374,7 +523,7 @@ namespace ImageWork
             string sql = "select top " + imgPerPage + " * from (select row_number() over (";
 
             sql += "order by " + GetSortSql();
-            sql += ") as rownum, * from [CMSNS5].[dbo].[T_FLOWIMG] where ";
+            sql += ") as rownum, * from [DAPS2022].[dbo].[CMS_FLOWIMG] where ";
 
             if (media_CB.SelectedIndex > 0)
                 sql += "ID_MECHAE = '" + media_CB.Text.Split('-')[1] + "' and ";
@@ -389,19 +538,26 @@ namespace ImageWork
             sql += "and (" + GetMyunSql() + ") ";
 
             if (state_CB.Text == "출고")
-                sql += "and (NM_FLOWSTATE & 256 = 256 and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29)) and B_DELETE = 0";
+                sql += "and NM_FLOWSTATE = 1 and B_DELETE = 0";
             else if (state_CB.Text == "미출고")
-                sql += "and (NM_FLOWSTATE & 256 = 0 and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29)) and B_DELETE = 0";
+                sql += "and NM_FLOWSTATE = 0 and B_DELETE = 0";
             else if (state_CB.Text == "휴지통")
-                sql += "and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29) and B_DELETE = 1";
-            else
-                sql += "and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29) and B_DELETE = 0";
+                sql += "and (NM_FLOWSTATE = 0 or NM_FLOWSTATE = 1) and B_DELETE = 1";
+            else // 전체
+                sql += "and (NM_FLOWSTATE = 0 or NM_FLOWSTATE = 1) and B_DELETE = 0";
 
             int pageNow = Convert.ToInt32(page_CB.Text);
             int pageTotal = page_CB.Items.Count;
 
-            sql += ") t1 where t1.rownum < " + (imgTotalCnt - (imgPerPage * (pageTotal - pageNow)) + 1);
-            sql += " and t1.rownum >= " + (imgTotalCnt - (imgPerPage * (pageTotal + 1 - pageNow)) + 1);
+            if (pageTotal == 1)
+            {
+                sql += ") t1";
+            }
+            else
+            {
+                sql += ") t1 where t1.rownum < " + (imgTotalCnt - (imgPerPage * (pageTotal - pageNow)) + 1);
+                sql += " and t1.rownum >= " + (imgTotalCnt - (imgPerPage * (pageTotal + 1 - pageNow)) + 1);
+            }
 
             string data = "";
             SqlConnection db = null;
@@ -423,13 +579,15 @@ namespace ImageWork
                 {
                     data += reader["V_OFILENAME"].ToString().Trim() + "∥"
                         + reader["V_TITLE"].ToString().Trim() + "∥"
+                        + reader["C_EXTENSION"].ToString().Trim() + "∥"
+                        + reader["V_TAG"].ToString().Trim() + "∥"
                         + reader["V_AUTHOR"].ToString().Trim() + "∥"
-                        + reader["D_PUBDATE"].ToString().Trim() + "∥"
-                        + reader["D_BEFOREPUBDATE"].ToString().Trim().Substring(0, 10) + "∥"
                         + reader["D_REGTIME"].ToString().Trim() + "∥"
+                        + reader["D_BEFOREPUBDATE"].ToString().Trim().Substring(0, 10) + "∥"
                         + reader["N_PAN"].ToString().Trim() + "∥"
                         + reader["N_PAGE"].ToString().Trim() + "∥"
                         + reader["V_BEFORESTATE"].ToString().Trim() + "∥"
+                        + reader["D_PUBDATE"].ToString().Trim() + "∥"
                         + reader["ID_FIM"].ToString().Trim() + "∥"
                         + reader["V_CAPTION"].ToString().Trim() + "∥"
                         + reader["V_RETOUCH"].ToString().Trim() + "|";
@@ -446,7 +604,7 @@ namespace ImageWork
             {
                 Cursor = Cursors.Default;
                 db.Close();
-                MessageBox.Show(ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(new Form { TopMost = true }, ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return data;
@@ -483,8 +641,8 @@ namespace ImageWork
             return sql;
         }
 
-        // 리스트뷰 값 세팅
-        public void SetListView(string str)
+        // 리스트뷰 세팅
+        private void SetListView(string str)
         {
             string[] article = str.Split('|');
             string[] columns = null;
@@ -500,6 +658,8 @@ namespace ImageWork
 
                     item = new ListViewItem(columns[IDX_OFILENAME]);
                     item.SubItems.Add(columns[IDX_TITLE]);
+                    item.SubItems.Add(columns[IDX_EXTENSION]);
+                    item.SubItems.Add(columns[IDX_EXTENSION_ORG]);
                     item.SubItems.Add(columns[IDX_AUTHOR]);
                     item.SubItems.Add(columns[IDX_PUBDATE]);
                     item.SubItems.Add(columns[IDX_BEFOREPUBDATE]);
@@ -520,13 +680,12 @@ namespace ImageWork
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(new Form { TopMost = true }, ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            ViewTypeCheck();
         }
 
-        public void SetGridView(string str)
+        // 그리드뷰 세팅 - 화상 목록
+        private void SetGridView(string str)
         {
             imgGridView.Rows.Clear();
 
@@ -542,14 +701,43 @@ namespace ImageWork
             imgGridView.ClearSelection();
         }
 
-        // 리스트뷰 보기 타입에 따른 설정
-        private void ViewTypeCheck()
+        // 그리드뷰 세팅 - 작업 내역
+        private void SetGridView2()
         {
-            Cursor = Cursors.WaitCursor;
+            // todo: 자동 새로고침 안됨
+            if (imgListView.SelectedItems.Count > 0 && tabControl.SelectedIndex == 1)
+            {
+                imgGridView2.Rows.Clear();
 
-            bgWorker.RunWorkerAsync(); // 이미지 하나씩 로드                              
+                ListViewItem item = imgListView.SelectedItems[0];
+                string id = item.SubItems[IDX_ID].Text;
+                string work_time = "";
+                string work_dept = "";
+                string work_name = "";
+                string work_kind = "";
+                string work_content = "";
 
-            Cursor = Cursors.Default;
+                dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select D_WORKDATE as work_time, 
+                    (select V_NAME from [CMSCOM].[dbo].[T_FOLDER] where ID_PUBPART = a.N_PUBPART) as work_dept,
+                    (select V_USERNAME from [CMSCOM].[dbo].[T_USERINFO] where ID_USERCODE = a.ID_USERCODE) as work_name,
+                    N_WORKKIND as work_kind,
+                    V_CONTENT as work_content  
+                    from [DAPS2022].[dbo].[CMS_WORKHISTORY] a where ID_FID = '{0}' 
+                    order by ID_WORKSEQ desc", id)), "SELECT");
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    work_time = dt.Rows[i]["work_time"].ToString();
+                    work_dept = dt.Rows[i]["work_dept"].ToString();
+                    work_name = dt.Rows[i]["work_name"].ToString();
+                    work_kind = dt.Rows[i]["work_kind"].ToString();
+                    work_content = dt.Rows[i]["work_content"].ToString();
+
+                    imgGridView2.Rows.Insert(i, work_time, work_dept, work_name, work_kind, work_content);
+                }
+
+                imgGridView2.ClearSelection();
+            }
         }
 
         // 이미지 하나씩 추가
@@ -560,13 +748,22 @@ namespace ImageWork
             for (int i = 0; i < imgListView.Items.Count; i++)
             {
                 ListViewItem item = imgListView.Items[i];
-                string date = item.SubItems[IDX_REGTIME].Text;
+                string date = item.SubItems[IDX_BEFOREPUBDATE].Text;
                 string id = item.SubItems[IDX_ID].Text;
-                string fileName = id + thumbExtMark;
+                string ext = item.SubItems[IDX_EXTENSION].Text;
+                string ext_o = item.SubItems[IDX_EXTENSION_ORG].Text;
+                string fileName = item.SubItems[IDX_OFILENAME].Text;
 
                 try
                 {
-                    imgList.Images.Add(ViewWebImage(string.Format("{0}/THUMB/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName), id));
+                    if (ext_o == "png" && ext == "png")
+                    {
+                        imgList.Images.Add(ViewWebImage(string.Format("{0}/THUMB/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + "." + ext), id));
+                    }
+                    else
+                    {
+                        imgList.Images.Add(ViewWebImage(string.Format("{0}/THUMB/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ".jpg"), id));
+                    }
                 }
                 catch (ArgumentNullException ex)
                 {
@@ -578,17 +775,18 @@ namespace ImageWork
             }
         }
 
+        // 아이콘
         private void getIconFlag(ref bool flag_caption, ref bool flag_chulgo, ref bool flag_photoshop, string id)
         {
-            dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select N_TICKETFLAG, ID_LOCKERCODE, NM_FLOWSTATE, ID_PUBPART from [CMSNS5].[dbo].[T_FLOWIMG] where ID_FIM = '{0}'", id)), "SELECT");
+            dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select N_TICKETFLAG, ID_LOCKERCODE, NM_FLOWSTATE from [DAPS2022].[dbo].[CMS_FLOWIMG] where ID_FIM = '{0}'", id)), "SELECT");
 
             if (dt.Rows[0]["N_TICKETFLAG"].ToString() == "1")
                 flag_caption = true;
 
-            if ((Convert.ToInt32(dt.Rows[0]["NM_FLOWSTATE"]) & 256) != 256)
+            if (dt.Rows[0]["NM_FLOWSTATE"].ToString() == "0")
                 flag_chulgo = false;
-            else
-                flag_chulgo = ((Convert.ToInt32(dt.Rows[0]["NM_FLOWSTATE"]) & 1) == 1 ? true : dt.Rows[0]["ID_PUBPART"].ToString() == "29");
+            else if (dt.Rows[0]["NM_FLOWSTATE"].ToString() == "1")
+                flag_chulgo = true;
 
             if (!(dt.Rows[0]["ID_LOCKERCODE"].ToString() == "" || dt.Rows[0]["ID_LOCKERCODE"].ToString() == "0"))
                 flag_photoshop = true;
@@ -603,11 +801,11 @@ namespace ImageWork
                 Stream stream = wc.OpenRead(url);
                 Bitmap downloadImg = Bitmap.FromStream(stream) as Bitmap;
 
-                if (url.Contains(prevExtMark))
+                if (url.Contains("PREV"))   // 오른쪽 프리뷰
                 {
                     return downloadImg;
                 }
-                else
+                else                        // 왼쪽 썸네일 리스트(+아이콘)
                 {
                     float imgWidth = downloadImg.Width;
                     float imgHeight = downloadImg.Height;
@@ -648,12 +846,27 @@ namespace ImageWork
                     Graphics graphic = Graphics.FromImage(bitmap1);
 
                     // 배경 설정
-                    if (IDX_THEME_BG == 1)
-                        graphic.Clear(Color.Black);
-                    else if (IDX_THEME_BG == 2)
-                        graphic.Clear(Color.FromArgb(40, 40, 40));
-                    else
+                    if (IDX_THEME_BG == 0)
+                    {
                         graphic.Clear(Color.White);
+                    }
+                    else if (IDX_THEME_BG == 1)
+                    {
+                        graphic.Clear(Color.Black);
+                    }
+                    else
+                    {
+                        if (IDX_THEME == IDX_THEME_DARK1)
+                            graphic.Clear(themeDark1[1]);
+                        else if (IDX_THEME == IDX_THEME_DARK2)
+                            graphic.Clear(themeDark2[1]);
+                        else if (IDX_THEME == IDX_THEME_LIGHT1)
+                            graphic.Clear(themeLight1[1]);
+                        else if (IDX_THEME == IDX_THEME_LIGHT2)
+                            graphic.Clear(themeLight2[1]);
+                        else
+                            graphic.Clear(themeBlue[1]);
+                    }
 
                     graphic.InterpolationMode = InterpolationMode.Bicubic;
                     graphic.DrawImage(bitmap2, iconPosX, iconPosY, thumbWidth, thumbHeight);
@@ -684,31 +897,25 @@ namespace ImageWork
             }
             catch (Exception ex)
             {
-                Util.SaveLog("Thumb Image Load Fail: 파일 ID: " + id + "\n" + ex);
+                Util.SaveLog("Thumb Image Load Fail: 파일 ID: " + id + ", URL: " + url + "\n" + ex);
                 return null;
             }
         }
 
         // 매체 CB 리스트 세팅
-        public void SetMediaCBList()
+        private void SetMediaCBList()
         {
-            dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select id_mechae, name from [DAPS].[dbo].[CMS_MECHAE] order by id_mechae")), "SELECT");
+            //dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select id_mechae, name from [DAPS2022].[dbo].[CMS_MECHAE] order by id_mechae")), "SELECT");
 
-            foreach (DataRow dr in dt.Rows)
-                media_CB.Items.Add(dr["name"].ToString() + "-" + dr["id_mechae"].ToString()); // "서울신문-65"              
-        }
-
-        // 판 CB 리스트 세팅
-        public void SetPanCBList()
-        {
-            dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select v_pan_name from [DAPS].[dbo].[CMS_PAN] where id_mechae = 65 order by n_pan_code")), "SELECT");
-
-            foreach (DataRow dr in dt.Rows)
-                pan_CB.Items.Add(dr["v_pan_name"].ToString().Replace("판", "")); // "5"
+            //foreach (DataRow dr in dt.Rows)
+            {
+                //media_CB.Items.Add(dr["name"].ToString() + "-" + dr["id_mechae"].ToString()); // "서울신문-65"      
+                media_CB.Items.Add("서울신문-65");
+            }
         }
 
         // 면 CB 리스트 세팅
-        public void SetMyunCBList()
+        private void SetMyunCBList()
         {
             TreeNode svrNode = new TreeNode("전체");
 
@@ -721,12 +928,12 @@ namespace ImageWork
         }
 
         // 페이지 CB 리스트 세팅
-        public void SetPageCBList()
+        private void SetPageCBList()
         {
             page_CB.Items.Clear();
 
             // 전체 이미지 개수 구하기
-            string sql = "select count(*) as cnt from [CMSNS5].[dbo].[T_FLOWIMG] where ";
+            string sql = "select count(*) as cnt from [DAPS2022].[dbo].[CMS_FLOWIMG] where ";
 
             if (media_CB.SelectedIndex > 0)
                 sql += "ID_MECHAE = '" + media_CB.Text.Split('-')[1] + "' and ";
@@ -741,141 +948,171 @@ namespace ImageWork
             sql += "and (" + GetMyunSql() + ") ";
 
             if (state_CB.Text == "출고")
-                sql += "and (NM_FLOWSTATE & 256 = 256 and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29)) and B_DELETE = 0";
+                sql += "and NM_FLOWSTATE = 1 and B_DELETE = 0";
             else if (state_CB.Text == "미출고")
-                sql += "and (NM_FLOWSTATE & 256 = 0 and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29)) and B_DELETE = 0";
+                sql += "and NM_FLOWSTATE = 0 and B_DELETE = 0";
             else if (state_CB.Text == "휴지통")
-                sql += "and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29) and B_DELETE = 1";
-            else
-                sql += "and (NM_FLOWSTATE & 1 = 1 or ID_PUBPART = 29) and B_DELETE = 0";
+                sql += "and (NM_FLOWSTATE = 0 or NM_FLOWSTATE = 1) and B_DELETE = 1";
+            else // 전체
+                sql += "and (NM_FLOWSTATE = 0 or NM_FLOWSTATE = 1) and B_DELETE = 0";
 
             dt = Util.ExecuteQuery(new SqlCommand(sql), "SELECT");
 
             imgTotalCnt = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
 
             // CB 추가
-            for (int i = (imgTotalCnt / imgPerPage) + 1; i > 0; i--)
-                page_CB.Items.Add(i);
+            if (imgTotalCnt == 0)
+            {
+                page_CB.Items.Add(1);
+            }
+            else if (imgTotalCnt % imgPerPage == 0)
+            {
+                for (int i = (imgTotalCnt / imgPerPage); i > 0; i--)
+                    page_CB.Items.Add(i);
+            }
+            else
+            {
+                for (int i = (imgTotalCnt / imgPerPage) + 1; i > 0; i--)
+                    page_CB.Items.Add(i);
+            }
 
-            page_CB.SelectedIndex = 0;
+            // 선택된 페이지
+            if (pageSelectedIdx == -1)
+                page_CB.SelectedIndex = 0;
+            else if (pageSelectedIdx <= page_CB.Items.Count - 1)
+                page_CB.SelectedIndex = pageSelectedIdx;
+            else
+                page_CB.SelectedIndex = page_CB.Items.Count - 1;
         }
 
         private void OpenFile()
         {
-            ListViewItem item = imgListView.SelectedItems[0];
-            string date = item.SubItems[IDX_REGTIME].Text;
-            string id = item.SubItems[IDX_ID].Text;
-
-            bool flag_chulgo = false;
-            bool flag_photoshop = false;
-
-            try
+            if (imgListView.SelectedItems.Count > 0)
             {
-                // 출고 및 작업중 확인 
-                dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select ID_LOCKERCODE, NM_FLOWSTATE, ID_PUBPART from [CMSNS5].[dbo].[T_FLOWIMG] where ID_FIM = '{0}'", id)), "SELECT");
+                ListViewItem item = imgListView.SelectedItems[0];
+                string date = item.SubItems[IDX_BEFOREPUBDATE].Text;
+                string id = item.SubItems[IDX_ID].Text;
+                string ext = item.SubItems[IDX_EXTENSION].Text;
+                string ext_o = item.SubItems[IDX_EXTENSION_ORG].Text;
+                string fileName = item.SubItems[IDX_OFILENAME].Text;
+                bool isJPG = (ext == "jpg") ? true : false;
 
-                if ((Convert.ToInt32(dt.Rows[0]["NM_FLOWSTATE"]) & 256) != 256)
-                    flag_chulgo = false;
-                else
-                    flag_chulgo = ((Convert.ToInt32(dt.Rows[0]["NM_FLOWSTATE"]) & 1) == 1 ? true : dt.Rows[0]["ID_PUBPART"].ToString() == "29");
+                bool flag_chulgo = false;
+                bool flag_photoshop = false;
+                string lockercode = "";
 
-                if (!(dt.Rows[0]["ID_LOCKERCODE"].ToString() == "" || dt.Rows[0]["ID_LOCKERCODE"].ToString() == "0"))
-                    flag_photoshop = true;
-
-                if (flag_chulgo)
+                try
                 {
-                    Search();
-                    MessageBox.Show("이미 출고되었습니다.", "파일 열기", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (flag_photoshop)
-                {
-                    Search();
-                    MessageBox.Show("이미 작업중입니다.", "파일 열기", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    // 출고 및 작업중 확인 
+                    dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select ID_LOCKERCODE, NM_FLOWSTATE from [DAPS2022].[dbo].[CMS_FLOWIMG] where ID_FIM = '{0}'", id)), "SELECT");
 
-                    // 작업창 앞으로
-                    Form[] workFormList = Application.OpenForms.Cast<Form>().Where(x => x.Name == "WorkForm").ToArray();
+                    if (dt.Rows[0]["NM_FLOWSTATE"].ToString() == "0")
+                        flag_chulgo = false;
+                    else if (dt.Rows[0]["NM_FLOWSTATE"].ToString() == "1")
+                        flag_chulgo = true;
 
-                    if (workFormList.Length > 0)
+                    if (!(dt.Rows[0]["ID_LOCKERCODE"].ToString() == "" || dt.Rows[0]["ID_LOCKERCODE"].ToString() == "0"))
                     {
-                        workFormList[0].Activate();
-                        workFormList[0].WindowState = FormWindowState.Normal;
-                    }
-                }
-                else
-                {
-                    // 포토샵 앞으로
-                    Process[] processList = Process.GetProcessesByName("Photoshop");
-
-                    if (processList.Length > 0)
-                    {
-                        ShowWindowAsync(processList[0].MainWindowHandle, 1);
-                        SetForegroundWindow(processList[0].MainWindowHandle);
+                        flag_photoshop = true;
+                        lockercode = dt.Rows[0]["ID_LOCKERCODE"].ToString();
                     }
 
-                    // 포토샵 실행
-                    Type type = Type.GetTypeFromProgID("Photoshop.Application");
-                    photoshop = (Photoshop.Application)Activator.CreateInstance(type, true);
-
-                    if (processList.Length == 0)
-                        return;
-
-                    // 마지막 작업 파일이 EPS 확장자인지 아닌지
-                    bool isEps = false;
-                    dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select top 1 C_EXTENSION from [CMSNS5].[dbo].[T_FLOWIMG] where ID_FIM = '{0}' order by D_PUBDATE desc", id)), "SELECT");
-
-                    if (dt.Rows[0].ItemArray[0].ToString().Trim().ToLower() == "eps")
-                        isEps = true;
-
-                    // 이미지 다운로드
-                    if (isEps)
+                    //
+                    if (flag_chulgo)
                     {
-                        // Real 파일 → Origin 폴더 (eps)
-                        using (WebClient wc = new WebClient())
+                        Search();
+                        MessageBox.Show(new Form { TopMost = true }, "이미 출고되었습니다.", "파일 열기", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else if (flag_photoshop)
+                    {
+                        Search();
+                        MessageBox.Show(new Form { TopMost = true }, "이미 작업중입니다. (작업자: " + Util.getUserName(lockercode) + ")", "파일 열기", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        string pubpart = "";
+                        string pan = "";
+                        string page = "";
+
+                        Util.getPanPage(ref pubpart, ref pan, ref page, id);
+
+                        // FLOWIMG 업데이트
+                        dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"update [DAPS2022].[dbo].[CMS_FLOWIMG] set 
+                    ID_LOCKERCODE = '{0}', V_BEFORESTATE = '작업중({1})' where ID_FIM = '{2}'", empCode, empName, id)), "UPDATE");
+
+                        // WORKHISTORY 인서트
+                        dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"insert into [DAPS2022].[dbo].[CMS_WORKHISTORY] 
+                    (ID_USERCODE, D_WORKDATE, V_CONTENT, N_WORKKIND, N_WORKCODE, N_PUBPART, ID_FID, N_CONTENT_TYPE, C_APP_TYPE) values 
+                    ('{0}', getdate(), '화상 ID : {1} ({2}면, {3}판, {4}부서코드)', '화상열기', '1001', '{5}', '{6}', '2', 'A')",
+                        empCode, id, page, pan, pubpart, Util.getPubpartName(empCode), id)), "INSERT");
+
+                        // 포토샵 열기
+                        Process[] processList = Process.GetProcessesByName("Photoshop");
+
+                        if (processList.Length == 0)
                         {
-                            wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + epsExtMark)), originWorkFolderPath + "\\" + id + epsExtMark);
+                            Type type = Type.GetTypeFromProgID("Photoshop.Application");
+                            photoshop = (Photoshop.Application)Activator.CreateInstance(type, true);
+                        }
+                        else
+                        {
+                            // 포토샵 앞으로
+                            ShowWindowAsync(processList[0].MainWindowHandle, 3);
+                            SetForegroundWindow(processList[0].MainWindowHandle);
                         }
 
-                        // Real 파일 → Real 폴더 (eps)
+                        // 이미지 다운로드
+                        if (!isJPG)
+                        {
+                            // Real 파일 → Real 폴더 (eps/psd/png)
+                            using (WebClient wc = new WebClient())
+                            {
+                                wc.DownloadFileCompleted += OpenPhotoshop(realWorkFolderPath + "\\" + fileName + "." + ext);
+                                wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + "." + ext)), realWorkFolderPath + "\\" + fileName + "." + ext);
+                            }
+                        }
+
+                        string ext_down = ".";
+
+                        if (ext_o == "png" && ext == "png")
+                            ext_down += ext;
+                        else
+                            ext_down += "jpg";
+
+                        // Real 파일 → Origin 폴더 (jpg/png)
                         using (WebClient wc = new WebClient())
                         {
-                            wc.DownloadFileCompleted += OpenPhotoshop(realWorkFolderPath + "\\" + id + epsExtMark);
-                            wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + epsExtMark)), realWorkFolderPath + "\\" + id + epsExtMark);
+                            wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ext_down)), originWorkFolderPath + "\\" + fileName + ext_down);
+                        }
+
+                        // Real 파일 → Real 폴더 (jpg/png)
+                        using (WebClient wc = new WebClient())
+                        {
+                            if (isJPG)
+                                wc.DownloadFileCompleted += OpenPhotoshop(realWorkFolderPath + "\\" + fileName + "." + ext);
+
+                            wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ext_down)), realWorkFolderPath + "\\" + fileName + ext_down);
+                        }
+
+                        // Prev 파일 → Prev 폴더 (jpg/png)
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFileCompleted += OpenWorkForm(fileName, ext, ext_o);
+                            wc.DownloadFileAsync(new Uri(string.Format("{0}/PREV/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ext_down)), prevWorkFolderPath + "\\" + fileName + ext_down);
+                        }
+
+                        // Thumb 파일 → Thumb 폴더 (jpg/png)
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFileAsync(new Uri(string.Format("{0}/THUMB/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ext_down)), thumbWorkFolderPath + "\\" + fileName + ext_down);
                         }
                     }
-
-                    // Real 파일 → Origin 폴더 (jpg)
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + realExtMark)), originWorkFolderPath + "\\" + id + realExtMark);
-                    }
-
-                    // Real 파일 → Real 폴더 (jpg)
-                    using (WebClient wc = new WebClient())
-                    {
-                        if (!isEps)
-                            wc.DownloadFileCompleted += OpenPhotoshop(realWorkFolderPath + "\\" + id + realExtMark);
-
-                        wc.DownloadFileAsync(new Uri(string.Format("{0}/REAL/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + realExtMark)), realWorkFolderPath + "\\" + id + realExtMark);
-                    }
-
-                    // Prev 파일 → Prev 폴더 (jpg)
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.DownloadFileCompleted += OpenWorkForm(id);
-                        wc.DownloadFileAsync(new Uri(string.Format("{0}/PREV/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + prevExtMark)), prevWorkFolderPath + "\\" + id + prevExtMark);
-                    }
-
-                    // Thumb 파일 → Thumb 폴더 (jpg)
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.DownloadFileAsync(new Uri(string.Format("{0}/THUMB/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), id + thumbExtMark)), thumbWorkFolderPath + "\\" + id + thumbExtMark);
-                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("파일 열기 중 오류가 발생했습니다. IT개발부로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Util.SaveLog("Image Open Fail: 파일 ID: " + id + "\n" + ex);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(new Form { TopMost = true }, "파일 열기 중 오류가 발생했습니다. IT개발팀으로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Util.SaveLog("Image Open Fail: 파일 ID: " + id + "\n" + ex);
+                }
             }
         }
 
@@ -883,28 +1120,38 @@ namespace ImageWork
         {
             Action<object, AsyncCompletedEventArgs> action = (sender, e) =>
             {
-                photoshop.Open(filePath, Missing.Value, Missing.Value);
+                try
+                {
+                    photoshop.Open(filePath);
+                }
+                catch (COMException)
+                {
+                }
             };
 
             return new AsyncCompletedEventHandler(action);
         }
 
         // 작업창 열기
-        private AsyncCompletedEventHandler OpenWorkForm(string id)
+        private AsyncCompletedEventHandler OpenWorkForm(string fileName, string ext, string ext_o)
         {
             Action<object, AsyncCompletedEventArgs> action = (sender, e) =>
             {
                 Form[] workFormList = Application.OpenForms.Cast<Form>().Where(x => x.Name == "WorkForm").ToArray();
 
+                // 꼬마창 열려있으면 다시 로드
                 if (workFormList.Length != 0)
-                    workFormList[0].Close();
+                {
+                    deleteWorkFile(eventWorkFolderPath);
+                    workForm.SetImage(fileName, "");
+                }
+                else
+                {
+                    Util.Delay(1000);
 
-                Delay(1000);
-
-                WorkForm workForm = new WorkForm(this, id, fontDialog);
-                workForm.Show();
-
-                Search();
+                    workForm = new WorkForm(this, fileName, ext, ext_o, fontDialog);
+                    workForm.Show();
+                }
             };
 
             return new AsyncCompletedEventHandler(action);
@@ -1010,19 +1257,14 @@ namespace ImageWork
             myun_TV.Hide();
         }
 
-        //
-        private void media_CB_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            Search();
-        }
-
-        //
+        // 검색일 기준 변경 - 게재일/등록일
         private void date_RB1_CheckedChanged(object sender, EventArgs e)
         {
-            Search();
+            if (!isInitBtnClicked)
+                Search();
         }
 
-        //
+        // 검색 시작일 변경
         private void date_CAL1_ValueChanged(object sender, EventArgs e)
         {
             // CAL1보다 CAL2가 이후 날짜인지 
@@ -1045,7 +1287,7 @@ namespace ImageWork
             date_CAL1.ValueChanged -= date_CAL1_ValueChanged;
         }
 
-        //
+        // 검색 종료일 변경
         private void date_CAL2_ValueChanged(object sender, EventArgs e)
         {
             // CAL1보다 CAL2가 이전 날짜인지       
@@ -1077,7 +1319,8 @@ namespace ImageWork
         // 면 변경
         private void myun_TB_TextChanged(object sender, EventArgs e)
         {
-            Search();
+            if (!isInitBtnClicked)
+                Search();
         }
 
         // 상태 변경
@@ -1092,32 +1335,39 @@ namespace ImageWork
             InitPreview();
 
             if (bgWorker.IsBusy)
-            {
-                bgWorker.Abort();
-                bgWorker.Dispose();
-
-                bgWorker = new AbortableBackgroundWorker();
-                bgWorker.DoWork += bgWorker_DoWork;
-            }
+                return;
 
             string sql = GetSearchSql();
-            SetListView(sql);
-            SetGridView(sql);
 
-            // 마지막 선택 이미지
-            if (imgSelectedIdx > -1 && imgSelectedIdx < imgListView.Items.Count)
+            if (sql != "")
             {
-                // 리스트뷰 선택 & 스크롤
-                imgListView.Items[imgSelectedIdx].Selected = true;
-                imgListView.Items[imgSelectedIdx].Focused = true;
-                imgListView.EnsureVisible(imgSelectedIdx);
+                SetListView(sql);
+                SetGridView(sql);
+                SetGridView2();
 
-                // 그리드뷰 선택 & 스크롤
-                imgGridView.Rows[imgSelectedIdx].Selected = true;
-                imgGridView.CurrentCell = imgGridView.Rows[imgSelectedIdx].Cells[0];
+                bgWorker.RunWorkerAsync();
 
-                // 프리뷰
-                ShowPreview();
+                // 마지막 선택 이미지
+                if (imgSelectedIdx > -1 && imgSelectedIdx < imgListView.Items.Count)
+                {
+                    // 리스트뷰 선택 & 스크롤
+                    imgListView.Items[imgSelectedIdx].Selected = true;
+                    imgListView.Items[imgSelectedIdx].Focused = true;
+                    imgListView.EnsureVisible(imgSelectedIdx);
+
+                    // 그리드뷰 선택 & 스크롤
+                    imgGridView.Rows[imgSelectedIdx].Selected = true;
+                    imgGridView.CurrentCell = imgGridView.Rows[imgSelectedIdx].Cells[0];
+
+                    // 프리뷰
+                    ShowPreview();
+                }
+
+                pageSelectedIdx = page_CB.SelectedIndex;
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -1138,6 +1388,8 @@ namespace ImageWork
                 // 그리드뷰 선택 & 스크롤
                 imgGridView.Rows[index].Selected = true;
                 imgGridView.CurrentCell = imgGridView.Rows[index].Cells[0];
+
+                SetGridView2();
 
                 // 프리뷰
                 ShowPreview();
@@ -1187,6 +1439,8 @@ namespace ImageWork
                 // 그리드뷰 선택 & 스크롤 (if문에 넣으면 X)
                 imgGridView.Rows[index].Selected = true;
                 imgGridView.CurrentCell = imgGridView.Rows[index].Cells[0];
+
+                SetGridView2();
 
                 // 프리뷰
                 ShowPreview();
@@ -1249,16 +1503,26 @@ namespace ImageWork
                 OpenFile();
         }
 
+        // 프리뷰 보기
         private void ShowPreview()
         {
             if (imgListView.SelectedItems.Count > 0)
             {
                 ListViewItem item = imgListView.SelectedItems[0];
-                string date = item.SubItems[IDX_REGTIME].Text;
+                string date = item.SubItems[IDX_BEFOREPUBDATE].Text;
                 string id = item.SubItems[IDX_ID].Text;
-                string fileName = id + prevExtMark;
+                string ext = item.SubItems[IDX_EXTENSION].Text;
+                string ext_o = item.SubItems[IDX_EXTENSION_ORG].Text;
+                string fileName = item.SubItems[IDX_OFILENAME].Text;
 
-                imgPreView.Image = ViewWebImage(string.Format("{0}/PREV/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName), id);
+                if (ext_o == "png" && ext == "png")
+                {
+                    imgPreView.Image = ViewWebImage(string.Format("{0}/PREV/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + "." + ext), id);
+                }
+                else
+                {
+                    imgPreView.Image = ViewWebImage(string.Format("{0}/PREV/{1}/{2}/{3}/{4}", downloadUrl, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ".jpg"), id);
+                }
 
                 filename_TB.Text = item.SubItems[IDX_OFILENAME].Text;
                 title_TB.Text = item.SubItems[IDX_TITLE].Text;
@@ -1273,6 +1537,7 @@ namespace ImageWork
             }
         }
 
+        // 프리뷰 초기화
         private void InitPreview()
         {
             imgPreView.Image = null;
@@ -1293,6 +1558,10 @@ namespace ImageWork
                     Search();
                     bHandled = true;
                     break;
+                case Keys.Delete:
+                    Delete();
+                    bHandled = true;
+                    break;
             }
 
             return bHandled;
@@ -1301,7 +1570,9 @@ namespace ImageWork
         // 검색 초기화 버튼 클릭
         private void init_BTN_Click(object sender, EventArgs e)
         {
+            isInitBtnClicked = true;
             Init();
+            isInitBtnClicked = false;
         }
 
         // 새로고침 버튼 클릭
@@ -1326,6 +1597,7 @@ namespace ImageWork
             WriteValue("FONT", "COLOR", TypeDescriptor.GetConverter(typeof(Color)).ConvertToString(fontDialog.Color));
             WriteValue("THEME", "IDX_BG", IDX_THEME_BG.ToString());
             WriteValue("THEME", "IDX_ICON", IDX_THEME_ICON.ToString());
+            WriteValue("THEME", "IDX_THEME", IDX_THEME.ToString());
             WriteValue("FOLDER_PATH", "ORIGIN_WORK", originWorkFolderPath);
             WriteValue("FOLDER_PATH", "REAL_WORK", realWorkFolderPath);
             WriteValue("FOLDER_PATH", "PREV_WORK", prevWorkFolderPath);
@@ -1337,12 +1609,29 @@ namespace ImageWork
             WriteValue("SPLITTER", "FORM_H1", splitContainer3.SplitterDistance.ToString());
             WriteValue("SPLITTER", "FORM_H2", splitContainer4.SplitterDistance.ToString());
             WriteValue("SPLITTER", "COL_HEADER", imgGridView.ColumnHeadersHeight.ToString());
+            WriteValue("SPLITTER", "COL_HEADER2", imgGridView2.ColumnHeadersHeight.ToString());
 
             // 컬럼 헤더 크기
             for (int i = 0; i < imgGridView.Columns.Count; i++)
                 WriteValue("SPLITTER", "COL" + i, imgGridView.Columns[i].Width.ToString());
 
-            // todo: 파일 삭제?
+            for (int i = 0; i < imgGridView2.Columns.Count; i++)
+                WriteValue("SPLITTER", "COL" + (i + 20), imgGridView2.Columns[i].Width.ToString());
+        }
+
+        // 작업 파일 삭제
+        public static void deleteWorkFile(string folderPath)
+        {
+            foreach (string file in Directory.GetFiles(folderPath))
+            {
+                FileInfo fi = new FileInfo(file);
+
+                if (fi.Name.StartsWith("zz-") && fi.CreationTime.Date < DateTime.Today.Date)
+                    fi.Delete(); // '만든 날짜' 어제 날짜까지 다 지우기
+
+                if (fi.Name.EndsWith(".evt"))
+                    fi.Delete(); // 다 지우기
+            }
         }
 
         // 글꼴 설정 버튼 클릭
@@ -1351,26 +1640,29 @@ namespace ImageWork
             try
             {
                 if (fontDialog.ShowDialog() == DialogResult.OK)
-                {
                     SetFont(sender, e);
-                }
             }
             catch (ArgumentException)
             {
-                MessageBox.Show("지원되는 글꼴이 아닙니다.", "글꼴 설정", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(new Form { TopMost = true }, "지원되는 글꼴이 아닙니다.", "글꼴 설정", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
+        // 글꼴 세팅
         private void SetFont(object sender, EventArgs e)
         {
             imgListView.Font = fontDialog.Font;
             imgListView.ForeColor = fontDialog.Color;
 
             imgGridView.Font = fontDialog.Font;
+            imgGridView2.Font = fontDialog.Font;
             imgGridView.ForeColor = fontDialog.Color;
+            imgGridView2.ForeColor = fontDialog.Color;
 
             imgGridView.AlternatingRowsDefaultCellStyle.Font = fontDialog.Font;
+            imgGridView2.AlternatingRowsDefaultCellStyle.Font = fontDialog.Font;
             imgGridView.AlternatingRowsDefaultCellStyle.ForeColor = fontDialog.Color;
+            imgGridView2.AlternatingRowsDefaultCellStyle.ForeColor = fontDialog.Color;
 
             filename_TB.Font = fontDialog.Font;
             filename_TB.ForeColor = fontDialog.Color;
@@ -1388,99 +1680,125 @@ namespace ImageWork
         // Thumb 저장 버튼 클릭
         private void save_thumb_BTN_Click(object sender, EventArgs e)
         {
-            DownloadFile("thumb");
+            DownloadFile("THUMB");
         }
 
         // Prev 저장 버튼 클릭
         private void save_prev_BTN_Click(object sender, EventArgs e)
         {
-            DownloadFile("prev");
+            DownloadFile("PREV");
         }
 
         // Real 저장 버튼 클릭
         private void save_real_BTN_Click(object sender, EventArgs e)
         {
-            DownloadFile("real");
+            DownloadFile("REAL");
         }
 
+        // 이미지 다운로드
         private void DownloadFile(string kind)
         {
             if (imgListView.SelectedItems.Count > 0)
             {
                 ListViewItem item = imgListView.SelectedItems[0];
-                string date = item.SubItems[IDX_REGTIME].Text;
-                string fileName = item.SubItems[IDX_ID].Text;
-                string fileName_saveAs = item.SubItems[IDX_OFILENAME].Text;
+                string date = item.SubItems[IDX_BEFOREPUBDATE].Text;
+                string id = item.SubItems[IDX_ID].Text;
+                string ext = item.SubItems[IDX_EXTENSION].Text;
+                string ext_o = item.SubItems[IDX_EXTENSION_ORG].Text;
+                string fileName = item.SubItems[IDX_OFILENAME].Text;
+
+                string saveFileName = "";
                 string fileFilter = "";
 
-                // 마지막 작업 파일이 EPS 확장자인지 아닌지
-                bool isEps = false;
-                dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select top 1 C_EXTENSION from T_IMAGE where ID_FIM = '{0}' order by D_PUBDATE desc", fileName)), "SELECT");
-
-                if (dt.Rows[0].ItemArray[0].ToString().Trim().ToLower() == "eps")
-                    isEps = true;
-
-                if (kind == "real")
+                // 저장 폴더, 확장자, 파일명 세팅
+                if (kind == "REAL")
                 {
                     saveFileDialog.InitialDirectory = realDownloadFolderPath;
 
-                    if (!isEps)
-                    {
-                        fileName += realExtMark;
-                        fileName_saveAs += realExtMark;
+                    if (ext == "jpg")
                         fileFilter = "Jpg Files (*.jpg, *.JPG)|*.jpg;*.JPG";
-                    }
-                    else
-                    {
-                        fileName += epsExtMark;
-                        fileName_saveAs += epsExtMark;
-                        fileFilter = "Eps Files (*.eps, *.EPS)|*.eps;*.EPS";
-                    }
+                    else if (ext == "eps")
+                        fileFilter = "EPS (*.eps, *.EPS)|*.eps;*.EPS";
+                    else if (ext == "psd")
+                        fileFilter = "Photoshop (*.psd, *.PSD)|*.psd;*.PSD";
+                    else if (ext == "png")
+                        fileFilter = "PNG (*.png, *.PNG)|*.png;*.PNG";
+
+                    saveFileName = fileName + "_R." + ext;
                 }
-                else if (kind == "prev")
+                else if (kind == "PREV")
                 {
                     saveFileDialog.InitialDirectory = prevDownloadFolderPath;
 
-                    fileName += prevExtMark;
-                    fileName_saveAs += prevExtMark;
-                    fileFilter = "Jpg Files (*.jpg, *.JPG)|*.jpg;*.JPG";
+                    if (ext_o == "png" && ext == "png")
+                    {
+                        fileFilter = "PNG (*.png, *.PNG)|*.png;*.PNG";
+                        saveFileName = fileName + "_P.png";
+                    }
+                    else
+                    {
+                        fileFilter = "Jpg Files (*.jpg, *.JPG)|*.jpg;*.JPG";
+                        saveFileName = fileName + "_P.jpg";
+                    }
                 }
-                else if (kind == "thumb")
+                else if (kind == "THUMB")
                 {
                     saveFileDialog.InitialDirectory = thumbDownloadFolderPath;
 
-                    fileName += thumbExtMark;
-                    fileName_saveAs += thumbExtMark;
-                    fileFilter = "Jpg Files (*.jpg, *.JPG)|*.jpg;*.JPG";
+                    if (ext_o == "png" && ext == "png")
+                    {
+                        fileFilter = "PNG (*.png, *.PNG)|*.png;*.PNG";
+                        saveFileName = fileName + "_T.png";
+                    }
+                    else
+                    {
+                        fileFilter = "Jpg Files (*.jpg, *.JPG)|*.jpg;*.JPG";
+                        saveFileName = fileName + "_T.jpg";
+                    }
                 }
 
+                // 파일 저장
                 try
                 {
-                    saveFileDialog.FileName = fileName_saveAs;
+                    saveFileDialog.FileName = saveFileName;
                     saveFileDialog.Filter = fileFilter;
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         using (WebClient wc = new WebClient())
                         {
-                            wc.DownloadFileAsync(new Uri(string.Format("{0}/{1}/{2}/{3}/{4}/{5}", downloadUrl, kind, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName)), saveFileDialog.FileName);
+                            if (kind == "REAL")
+                            {
+                                wc.DownloadFileAsync(new Uri(string.Format("{0}/{1}/{2}/{3}/{4}/{5}", downloadUrl, kind, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + "." + ext)), saveFileDialog.FileName);
+                            }
+                            else
+                            {
+                                if (ext_o == "png" && ext == "png")
+                                {
+                                    wc.DownloadFileAsync(new Uri(string.Format("{0}/{1}/{2}/{3}/{4}/{5}", downloadUrl, kind, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + "." + ext)), saveFileDialog.FileName);
+                                }
+                                else
+                                {
+                                    wc.DownloadFileAsync(new Uri(string.Format("{0}/{1}/{2}/{3}/{4}/{5}", downloadUrl, kind, date.Substring(0, 4), date.Substring(5, 2), date.Substring(8, 2), fileName + ".jpg")), saveFileDialog.FileName);
+                                }
+                            }
                         }
 
-                        MessageBox.Show("저장되었습니다.", "파일 저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Util.SaveLog("File Save Complete: 파일명: " + fileName);
+                        MessageBox.Show(new Form { TopMost = true }, "저장되었습니다.", "파일 저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Util.SaveLog("File Save Complete: 파일명: " + saveFileDialog.FileName);
 
-                        if (kind == "real")
+                        if (kind == "REAL")
                             realDownloadFolderPath = Path.GetDirectoryName(saveFileDialog.FileName);
-                        else if (kind == "prev")
+                        else if (kind == "PREV")
                             prevDownloadFolderPath = Path.GetDirectoryName(saveFileDialog.FileName);
-                        else if (kind == "thumb")
+                        else if (kind == "THUMB")
                             thumbDownloadFolderPath = Path.GetDirectoryName(saveFileDialog.FileName);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("파일 저장 중 오류가 발생했습니다. IT개발부로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Util.SaveLog("File Save Fail: 파일명: " + fileName + ", action: " + kind + "\n" + ex);
+                    MessageBox.Show(new Form { TopMost = true }, "파일 저장 중 오류가 발생했습니다. IT개발팀으로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Util.SaveLog("File Save Fail: 파일명: " + saveFileDialog.FileName + ", action: " + kind + "\n" + ex);
                 }
             }
         }
@@ -1490,33 +1808,38 @@ namespace ImageWork
         {
             hideTreeMyun(sender, e);
 
-            DialogResult result = MessageBox.Show(this, "로그아웃되었습니다.", "화상 작업", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            var confirmResult = MessageBox.Show(new Form { TopMost = true }, "로그아웃 완료.\n\n프로그램을 재실행하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
-            if (result == DialogResult.OK)
+            if (confirmResult == DialogResult.Yes)
+            {
+                Util.SaveLog("Logout: " + empNo + ", Restart");
                 Application.Restart();
+            }
             else
+            {
+                Util.SaveLog("Logout: " + empNo + ", Exit");
                 Application.Exit();
-
-            Util.SaveLog("Logout: " + empNo);
+            }
         }
 
-        // 배경 설정
+        // 배경 설정 메뉴 클릭
         private void settings_menu2_1_Click(object sender, EventArgs e)
         {
-            SetThemeBG(0);
+            SetThemeBG(0, true);
         }
 
         private void settings_menu2_2_Click(object sender, EventArgs e)
         {
-            SetThemeBG(1);
+            SetThemeBG(1, true);
         }
 
         private void settings_menu2_3_Click(object sender, EventArgs e)
         {
-            SetThemeBG(2);
+            SetThemeBG(2, true);
         }
 
-        private void SetThemeBG(int index)
+        // 배경 세팅 
+        private void SetThemeBG(int index, bool refresh)
         {
             IDX_THEME_BG = index;
 
@@ -1530,26 +1853,28 @@ namespace ImageWork
                     ((ToolStripMenuItem)items[i]).Checked = false;
             }
 
-            Search();
+            if (refresh)
+                Search();
         }
 
-        // 아이콘 설정
+        // 아이콘 설정 메뉴 클릭
         private void settings_menu3_1_Click(object sender, EventArgs e)
         {
-            SetThemeIcon(0);
+            SetThemeIcon(0, true);
         }
 
         private void settings_menu3_2_Click(object sender, EventArgs e)
         {
-            SetThemeIcon(1);
+            SetThemeIcon(1, true);
         }
 
         private void settings_menu3_3_Click(object sender, EventArgs e)
         {
-            SetThemeIcon(2);
+            SetThemeIcon(2, true);
         }
 
-        private void SetThemeIcon(int index)
+        // 아이콘 세팅
+        private void SetThemeIcon(int index, bool refresh)
         {
             IDX_THEME_ICON = index;
 
@@ -1564,9 +1889,12 @@ namespace ImageWork
             }
 
             SetIconPath();
-            Search();
+
+            if (refresh)
+                Search();
         }
 
+        // 전표 보기 버튼 클릭
         private void print_prev_BTN_Click(object sender, EventArgs e)
         {
             if (imgListView.SelectedItems.Count > 0)
@@ -1579,81 +1907,307 @@ namespace ImageWork
             }
         }
 
-        // 파일 복사 - 일반
+        // 파일 복사 메뉴 클릭 - 일반
         private void ToolStripMenuItem1_1_Click(object sender, EventArgs e)
         {
-            Search();
-            MessageBox.Show("일반 복사되었습니다.", "파일 복사", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // 파일 복사 - 원화상
-        private void ToolStripMenuItem1_2_Click(object sender, EventArgs e)
-        {
-            Search();
-            MessageBox.Show("원화상 복사되었습니다.", "파일 복사", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // 전표 인쇄 버튼 클릭
-        private void print_BTN_Click(object sender, EventArgs e)
-        {
-            DialogResult confirmResult = MessageBox.Show("인쇄하시겠습니까?", "전표 인쇄", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (confirmResult == DialogResult.Yes)
+            if (imgListView.SelectedItems.Count > 0)
             {
-                string id = imgListView.SelectedItems[0].SubItems[IDX_ID].Text;
+                DialogResult confirmResult = MessageBox.Show(new Form { TopMost = true }, "일반 복사하시겠습니까?", "파일 복사", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-                WebBrowser webBrowser = new WebBrowser();
-                webBrowser.Navigate(printUrl + id);
-                webBrowser.Print();
+                if (confirmResult == DialogResult.Yes)
+                    CopyFile("S");
             }
         }
 
+        // 파일 복사 메뉴 클릭 - 원화상
+        private void ToolStripMenuItem1_2_Click(object sender, EventArgs e)
+        {
+            if (imgListView.SelectedItems.Count > 0)
+            {
+                DialogResult confirmResult = MessageBox.Show(new Form { TopMost = true }, "원화상 복사하시겠습니까?", "파일 복사", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (confirmResult == DialogResult.Yes)
+                    CopyFile("R");
+            }
+        }
+
+        // 파일 복사
+        private void CopyFile(string type)
+        {
+            ListViewItem item = imgListView.SelectedItems[0];
+            string id = item.SubItems[IDX_ID].Text;
+            string copyPath = copyUrl + "?TYPE=" + type + "&ID=" + id;
+            // Ex) ctssvr1.seoul.co.kr/PhotoMgr/filecopy.aspx?TYPE=S&ID=10000249   
+
+            WebRequest request = WebRequest.Create(copyPath);
+            request.Method = "GET";
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            string result = reader.ReadToEnd();
+
+            if (result == "S")
+            {
+                string pubpart = "";
+                string pan = "";
+                string page = "";
+
+                Util.getPanPage(ref pubpart, ref pan, ref page, id);
+
+                // WORKHISTORY 인서트
+                dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"insert into [DAPS2022].[dbo].[CMS_WORKHISTORY] 
+                    (ID_USERCODE, D_WORKDATE, V_CONTENT, N_WORKKIND, N_WORKCODE, N_PUBPART, ID_FID, N_CONTENT_TYPE, C_APP_TYPE) values 
+                    ('{0}', getdate(), '화상 ID : {1} ({2}면, {3}판, {4}부서코드)', '화상복사', '1001', '{5}', '{6}', '2', 'A')",
+                empCode, id, page, pan, pubpart, Util.getPubpartName(empCode), id)), "INSERT");
+
+                MessageBox.Show(new Form { TopMost = true }, "파일이 복사되었습니다.", "파일 복사", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Util.SaveLog("File Copy Complete: " + copyPath);
+            }
+            else
+            {
+                MessageBox.Show(new Form { TopMost = true }, "파일 복사 중 오류가 발생했습니다. IT개발팀으로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Util.SaveLog("File Copy Fail: " + copyPath);
+            }
+
+            reader.Close();
+            stream.Close();
+            response.Close();
+
+            Search();
+        }
+
+        // 폴더 설정 메뉴 클릭
         private void settings_menu4_Click(object sender, EventArgs e)
         {
-            FolderSetForm folderSetForm = new FolderSetForm();
+            FolderSetForm folderSetForm = new FolderSetForm(fontDialog);
             folderSetForm.ShowDialog();
         }
 
-        private DateTime Delay(int ms)
-        {
-            DateTime dateTimeNow = DateTime.Now;
-            TimeSpan duration = new TimeSpan(0, 0, 0, 0, ms);
-            DateTime dateTimeAdd = dateTimeNow.Add(duration);
-
-            while (dateTimeAdd >= dateTimeNow)
-            {
-                Application.DoEvents();
-                dateTimeNow = DateTime.Now;
-            }
-
-            return DateTime.Now;
-        }
-
-        // 잠금 해제
+        // 잠금 해제 메뉴 클릭
         private void ToolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            DialogResult confirmResult = MessageBox.Show("잠금 해제하시겠습니까?", "잠금 해제", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (confirmResult == DialogResult.Yes)
+            if (imgListView.SelectedItems.Count > 0)
             {
-                string id = imgListView.SelectedItems[0].SubItems[IDX_ID].Text;
+                DialogResult confirmResult = MessageBox.Show(new Form { TopMost = true }, "잠금을 해제하시겠습니까?", "잠금 해제", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-                try
+                if (confirmResult == DialogResult.Yes)
                 {
-                    // T_FLOWIMG 업데이트
-                    dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"update [CMSNS5].[dbo].[T_FLOWIMG] set 
-ID_LOCKERCODE = NULL
-where ID_FIM = '{0}'", id)), "UPDATE");
+                    string id = imgListView.SelectedItems[0].SubItems[IDX_ID].Text;
 
-                    Search();
-                    MessageBox.Show("잠금 해제되었습니다.", "잠금 해제", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("잠금 해제 중 오류가 발생했습니다. IT개발부로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Util.SaveLog("Image Unlock Fail: 파일 ID: " + id + "\n" + ex);
+                    try
+                    {
+                        // FLOWIMG 업데이트
+                        dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"update [DAPS2022].[dbo].[CMS_FLOWIMG] set 
+                    ID_LOCKERCODE = NULL, V_BEFORESTATE = ''
+                    where ID_FIM = '{0}'", id)), "UPDATE");
+
+                        Search();
+                        MessageBox.Show(new Form { TopMost = true }, "잠금이 해제되었습니다.", "잠금 해제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(new Form { TopMost = true }, "잠금 해제 중 오류가 발생했습니다. IT개발팀으로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Util.SaveLog("Image Unlock Fail: 파일 ID: " + id + "\n" + ex);
+                    }
                 }
             }
+        }
+
+        // 파일 삭제 메뉴 클릭
+        private void ToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            if (imgListView.SelectedItems.Count > 0)
+            {
+                Delete();
+            }
+        }
+
+        // 파일 삭제
+        private void Delete()
+        {
+            ListViewItem item = imgListView.SelectedItems[0];
+            string id = item.SubItems[IDX_ID].Text;
+
+            try
+            {
+                // 출고 상태 확인
+                dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"select NM_FLOWSTATE from [DAPS2022].[dbo].[CMS_FLOWIMG]
+                    where ID_FIM = '{0}'", id)), "SELECT");
+
+                if (dt.Rows[0].ItemArray[0].ToString() == "1")
+                {
+                    Search();
+                    MessageBox.Show(new Form { TopMost = true }, "이미 출고된 파일은 삭제할 수 없습니다.", "파일 삭제", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    DialogResult confirmResult = MessageBox.Show(new Form { TopMost = true }, "파일을 삭제하시겠습니까?", "파일 삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        string pubpart = "";
+                        string pan = "";
+                        string page = "";
+
+                        Util.getPanPage(ref pubpart, ref pan, ref page, id);
+
+                        // FLOWIMG 업데이트
+                        dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"update [DAPS2022].[dbo].[CMS_FLOWIMG] set 
+                        B_DELETE = '1' where ID_FIM = '{0}' and NM_FLOWSTATE = '0'", id)), "UPDATE");
+
+                        // WORKHISTORY 인서트
+                        dt = Util.ExecuteQuery(new SqlCommand(string.Format(@"insert into [DAPS2022].[dbo].[CMS_WORKHISTORY] 
+                        (ID_USERCODE, D_WORKDATE, V_CONTENT, N_WORKKIND, N_WORKCODE, N_PUBPART, ID_FID, N_CONTENT_TYPE, C_APP_TYPE) values 
+                        ('{0}', getdate(), '화상 ID : {1} ({2}면, {3}판, 부서코드{4})', '화상삭제', '1001', '{5}', '{6}', '2', 'A')",
+                        empCode, id, page, pan, pubpart, pubpart, id)), "INSERT");
+
+                        Search();
+                        MessageBox.Show(new Form { TopMost = true }, "파일이 삭제되었습니다.", "파일 삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(new Form { TopMost = true }, "파일 삭제 중 오류가 발생했습니다. IT개발팀으로 문의 바랍니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Util.SaveLog("Image Delete Fail: 파일 ID: " + id + "\n" + ex);
+            }
+        }
+
+        // 그리드뷰 탭 변경
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetGridView2();
+        }
+
+        // 테마 설정 메뉴 클릭
+        private void SetTheme(int index, Color[] color, bool refresh)
+        {
+            IDX_THEME = index;
+
+            ToolStripItemCollection items = settings_menu5.DropDownItems;
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i == index)
+                    ((ToolStripMenuItem)items[i]).Checked = true;
+                else
+                    ((ToolStripMenuItem)items[i]).Checked = false;
+            }
+
+            toolStrip.BackColor = color[0];
+            splitContainer1.Panel1.BackColor = color[0];
+            imgGridView.ColumnHeadersDefaultCellStyle.BackColor = color[0];
+            imgGridView2.ColumnHeadersDefaultCellStyle.BackColor = color[0];
+            toolStripStatusLabel1.BackColor = color[0];
+            toolStripStatusLabel2.BackColor = color[0];
+
+            imgListView.BackColor = color[1];
+            imgPreView.BackColor = color[1];
+            splitContainer4.Panel2.BackColor = color[1];
+            splitContainer3.Panel2.BackColor = color[1];
+            splitContainer2.Panel1.BackColor = color[1];
+            imgGridView.DefaultCellStyle.BackColor = color[1];
+            imgGridView2.DefaultCellStyle.BackColor = color[1];
+            imgGridView.BackgroundColor = color[1];
+            imgGridView2.BackgroundColor = color[1];
+
+            splitContainer2.BackColor = color[2];
+            splitContainer3.BackColor = color[2];
+            splitContainer4.BackColor = color[2];
+            filename_TB.BackColor = color[2];
+            title_TB.BackColor = color[2];
+            caption_TB.BackColor = color[2];
+            retouch_TB.BackColor = color[2];
+            imgGridView.AlternatingRowsDefaultCellStyle.BackColor = color[2];
+            imgGridView2.AlternatingRowsDefaultCellStyle.BackColor = color[2];
+            imgGridView.GridColor = color[2];
+            imgGridView2.GridColor = color[2];
+            init_BTN.FlatAppearance.BorderColor = color[2];
+            init_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            init_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            save_real_BTN.FlatAppearance.BorderColor = color[2];
+            save_real_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            save_real_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            save_prev_BTN.FlatAppearance.BorderColor = color[2];
+            save_prev_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            save_prev_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            save_thumb_BTN.FlatAppearance.BorderColor = color[2];
+            save_thumb_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            save_thumb_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            open_BTN.FlatAppearance.BorderColor = color[2];
+            open_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            open_BTN.FlatAppearance.MouseOverBackColor = color[2];
+            print_prev_BTN.FlatAppearance.BorderColor = color[2];
+            print_prev_BTN.FlatAppearance.MouseDownBackColor = color[2];
+            print_prev_BTN.FlatAppearance.MouseOverBackColor = color[2];
+
+            init_BTN.BackColor = color[3];
+            save_real_BTN.BackColor = color[3];
+            save_prev_BTN.BackColor = color[3];
+            save_thumb_BTN.BackColor = color[3];
+            open_BTN.BackColor = color[3];
+            print_prev_BTN.BackColor = color[3];
+
+            date_RB1.ForeColor = color[4];
+            date_RB2.ForeColor = color[4];
+            label5.ForeColor = color[4];
+            label1.ForeColor = color[4];
+            label2.ForeColor = color[4];
+            label3.ForeColor = color[4];
+            label6.ForeColor = color[4];
+            label4.ForeColor = color[4];
+            label7.ForeColor = color[4];
+            label8.ForeColor = color[4];
+            init_BTN.ForeColor = color[4];
+            save_real_BTN.ForeColor = color[4];
+            save_prev_BTN.ForeColor = color[4];
+            save_thumb_BTN.ForeColor = color[4];
+            open_BTN.ForeColor = color[4];
+            print_prev_BTN.ForeColor = color[4];
+            settings_BTN.ForeColor = color[4];
+            refresh_BTN.ForeColor = color[4];
+            logout_BTN.ForeColor = color[4];
+            toolStripStatusLabel1.ForeColor = color[4];
+            toolStripStatusLabel2.ForeColor = color[4];
+            imgGridView.ColumnHeadersDefaultCellStyle.ForeColor = color[4];
+            imgGridView2.ColumnHeadersDefaultCellStyle.ForeColor = color[4];
+
+            if (index == IDX_THEME_DARK1 || index == IDX_THEME_DARK2 || index == IDX_THEME_BLUE)
+                fontDialog.Color = Color.White;
+            else if (index == IDX_THEME_LIGHT1 || index == IDX_THEME_LIGHT2)
+                fontDialog.Color = Color.Black;
+
+            SetFont(null, null);
+
+            if (refresh)
+                Search();
+        }
+
+        private void settings_menu5_1_Click(object sender, EventArgs e)
+        {
+            SetTheme(IDX_THEME_DARK1, themeDark1, true);
+        }
+
+        private void settings_menu5_2_Click(object sender, EventArgs e)
+        {
+            SetTheme(IDX_THEME_DARK2, themeDark2, true);
+        }
+
+        private void settings_menu5_3_Click(object sender, EventArgs e)
+        {
+            SetTheme(IDX_THEME_LIGHT1, themeLight1, true);
+        }
+
+        private void settings_menu5_4_Click(object sender, EventArgs e)
+        {
+            SetTheme(IDX_THEME_LIGHT2, themeLight2, true);
+        }
+
+        private void settings_menu5_5_Click(object sender, EventArgs e)
+        {
+            SetTheme(IDX_THEME_BLUE, themeBlue, true);
         }
     }
 }
