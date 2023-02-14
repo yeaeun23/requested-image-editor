@@ -19,12 +19,15 @@
 - 리스트 컬럼 너비, 창 크기, 스플리터 값 저장
 
 ![image](https://user-images.githubusercontent.com/14077108/137449088-5ba2342a-30d6-491b-b642-5b77a0cdb93f.png)
+![image](https://user-images.githubusercontent.com/14077108/218677049-4bb17edc-886a-4511-afa6-36af68cbef51.png)
 
 #### 2-1. 좌측 뷰
 - 편집 요청된 이미지 리스트
 - 우클릭 메뉴
 
     ![우클릭2](https://user-images.githubusercontent.com/14077108/137505072-b92a1596-6ab2-4021-8d77-c03134012c01.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218678823-94fbf010-c104-477d-bda3-75e08d51fc41.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218679679-3d8986d9-a7f5-4b93-a42b-d9ec67111de6.png)
 
 #### 2-2. 우측 뷰
 - 좌측에서 선택된 이미지의 전표 상세 (요청사항)
