@@ -1,9 +1,9 @@
 # requested-image-editor
 
-- 개발 100%
+- 개발 90%
 - 디자인 100%
 - DB설계 0%
-- 2021.01~2021.04 (4개월)
+- 2021.01~2021.04 (4개월) + 2022.12~2023.01 (2개월)
 
 ## 기능 및 화면 예시
 
@@ -11,6 +11,7 @@
 - 아이디 저장
 
 ![image](https://user-images.githubusercontent.com/14077108/137447401-53b088c3-e64e-4d26-bcb8-83924b0cf6c1.png)
+![image](https://user-images.githubusercontent.com/14077108/218674708-53483284-e8a6-4f54-9289-b4aead657cdd.png)
 
 - - -
 
