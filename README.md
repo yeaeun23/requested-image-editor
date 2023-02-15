@@ -46,8 +46,8 @@
     + 전표 보기 : 웹뷰, 브라우저에서 열기
 
     ![전표보기2](https://user-images.githubusercontent.com/14077108/137481832-618219aa-6b81-41ed-8b30-7038da035030.png)
-    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="50%" style="vertical-align: top">
-    <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="50%" style="vertical-align: top">
+    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="45%" style="vertical-align: top">&nbsp;&nbsp;&nbsp;
+    <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="45%" style="vertical-align: top">
 
     + 전표 인쇄
 
