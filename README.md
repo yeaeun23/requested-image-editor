@@ -8,10 +8,10 @@
 
 ### 3. 프로그램 특징
 - 포토샵으로 사진을 편집하는 부서에서 사용하는 프로그램으로,\
-  '사진 편집 요청 확인 → 사진 편집 → 편집된 사진 전송'까지의 작업을 수행합니다.
-- 포토샵에서 제공되는 '스크립트 이벤트 관리자' 기능을 활용합니다.
+  '사진 편집 요청 확인 → 사진 다운로드 → 사진 편집 → 사진 업로드'까지의 작업을 수행합니다.
+- 포토샵에서 제공되는 '스크립트 이벤트 관리자' 기능을 활용해 연동합니다.
 - 지면 출력용 사진이기 때문에 'CMYK 모드' 및 'EPS 파일 확장자'를 처리합니다.
-- 사진 하나 당 크기가 다른 3개의 파일을 내부적으로 처리합니다.\
+- 사진 하나 당 크기가 다른 3개의 파일로 나눠 내부적으로 처리합니다.\
   (Real, Preview, Thumbnail)
 
 <br>
@@ -27,22 +27,25 @@
 ### 1. 로그인
 - 버전 체크 및 업데이트 성공 시 로그인 창이 뜹니다.
 - 아이디 저장 여부를 체크할 수 있습니다.
+
+  ![image](https://user-images.githubusercontent.com/14077108/218674708-53483284-e8a6-4f54-9289-b4aead657cdd.png)
+
 - 아이디와 비밀번호를 체크합니다.
   - 아이디를 입력하지 않은 경우
   - 비밀번호를 입력하지 않은 경우
   - 비밀번호를 다르게 입력한 경우
   
-![image](https://user-images.githubusercontent.com/14077108/218674708-53483284-e8a6-4f54-9289-b4aead657cdd.png)
+  ![image](https://user-images.githubusercontent.com/14077108/218952879-d860482f-ef0a-45a2-8c4c-65c45ef7e6b2.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ![image](https://user-images.githubusercontent.com/14077108/218953029-f2354877-0f17-4496-8f2e-42d4263f0e7e.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ![image](https://user-images.githubusercontent.com/14077108/218953056-32ee02ca-5467-4ffb-8fcd-a65b7d6ee046.png)
 
-![image](https://user-images.githubusercontent.com/14077108/218952879-d860482f-ef0a-45a2-8c4c-65c45ef7e6b2.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![image](https://user-images.githubusercontent.com/14077108/218953029-f2354877-0f17-4496-8f2e-42d4263f0e7e.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![image](https://user-images.githubusercontent.com/14077108/218953056-32ee02ca-5467-4ffb-8fcd-a65b7d6ee046.png)
+
 
 ### 2. 메인
 - 로그인 성공 시 메인 창이 뜹니다.
-- 편집이 요청된 사진들로, 사진을 하나씩 클릭하면 크게 볼 수 있습니다.
+- 편집이 요청된 사진들로, 좌측에서 선택하면 우측에서 크게 볼 수 있습니다.
 - 이전에 사용했던 환경설정이 그대로 유지된 상태입니다.\
   (창 크기, 리스트 이미지 크기, 리스트 컬럼 너비, 스플리터 간격, 글꼴, 테마 등)
 
@@ -54,19 +57,17 @@
   - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
     - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
     - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
+
+
+
   - 파일 다운로드: 
 
-    ![우클릭2](https://user-images.githubusercontent.com/14077108/137505072-b92a1596-6ab2-4021-8d77-c03134012c01.png)
+    
     ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
 
-#### 2-2. 우측 뷰
-- 좌측에서 선택된 이미지의 전표 상세 (요청사항)
-- 하단 메뉴
 
-    ![전표보기3](https://user-images.githubusercontent.com/14077108/137486000-e7cb541e-3511-40d1-a2e7-35abfe2bf6e1.png)
-    ![image](https://user-images.githubusercontent.com/14077108/218682101-9ae24913-9017-42cd-9361-98f3e3e1254d.png)
-
+   
     + 파일 저장 : 해상도별로 서버 → 로컬 다운로드
 
     ![파일저장2](https://user-images.githubusercontent.com/14077108/137497969-f5bcf803-9621-4812-b61c-037adeb5df77.png)
@@ -75,7 +76,6 @@
 
     + 전표 보기 : 웹뷰, 브라우저에서 열기
 
-    ![전표보기2](https://user-images.githubusercontent.com/14077108/137481832-618219aa-6b81-41ed-8b30-7038da035030.png)
     <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="45%" align="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="45%" align="top">
 
@@ -89,7 +89,6 @@
 ### 3. 작업창
 - 우클릭 메뉴에서 파일 열기 or 더블 클릭 → 포토샵 실행 및 파일 로드 → 작업창 실행
 
-![작업10](https://user-images.githubusercontent.com/14077108/137513121-0b585ed7-69c1-4920-b300-1578a37ef2d4.png)
 
 
 ![image](https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png)
@@ -159,7 +158,6 @@
 
 #### 5-1. 이미지 크기 설정
 
-![크기설정3](https://user-images.githubusercontent.com/14077108/137459801-85afa6b5-619a-4f6b-b4cb-cec8b9c85d68.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png)
 
 ![image](https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png)
