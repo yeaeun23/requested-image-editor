@@ -9,15 +9,29 @@
 ## 기능 및 화면 예시
 
 ### 1. 로그인
-- 아이디 저장
+- 아이디를 저장할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/14077108/137447401-53b088c3-e64e-4d26-bcb8-83924b0cf6c1.png)
+- 아이디와 비밀번호를 체크합니다.
+![image](https://user-images.githubusercontent.com/14077108/218952879-d860482f-ef0a-45a2-8c4c-65c45ef7e6b2.png)
+
+
+
+아이디를 입력하지 않은 경우
 ![image](https://user-images.githubusercontent.com/14077108/218674708-53483284-e8a6-4f54-9289-b4aead657cdd.png)
+
+비밀번호를 입력하지 않은 경우
+![image](https://user-images.githubusercontent.com/14077108/218953029-f2354877-0f17-4496-8f2e-42d4263f0e7e.png)
+
+
+비밀번호를 틀린 경우
+![image](https://user-images.githubusercontent.com/14077108/218953056-32ee02ca-5467-4ffb-8fcd-a65b7d6ee046.png)
 
 - - -
 
 ### 2. 메인
-- 리스트 컬럼 너비, 창 크기, 스플리터 값 저장
+- 로그인 성공 시 메인 창이 뜹니다.
+- 이전에 사용했던 환경설정이 그대로 유지된 상태입니다.
+  (창 크기, 리스트 이미지 크기, 리스트 컬럼 너비, 스플리터 간격, 글꼴, 테마 등)
 
 ![image](https://user-images.githubusercontent.com/14077108/137449088-5ba2342a-30d6-491b-b642-5b77a0cdb93f.png)
 ![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
@@ -61,9 +75,25 @@
 
 ![작업10](https://user-images.githubusercontent.com/14077108/137513121-0b585ed7-69c1-4920-b300-1578a37ef2d4.png)
 
+
+![image](https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png)
+
+
+
 - 편집 후 저장 → 출고
 
 ![작업11](https://user-images.githubusercontent.com/14077108/137513155-e7765ba1-49ac-44ea-98b2-7d3edc6b0327.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218951995-fc0cc651-a46b-4dad-91af-84e1fe44ab42.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218952012-4222f11b-ec86-4495-943e-c03f3fdafd7b.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218952023-5e808c79-896a-4359-83d1-ec3a0f6a20c6.png)
+
 
 - 상태 변화
 
@@ -78,10 +108,13 @@
 ### 4. 환경설정
 
 ![환경설정](https://user-images.githubusercontent.com/14077108/137449977-a1b5af94-bf31-4797-ae61-d90c23a2c95d.png)
+![image](https://user-images.githubusercontent.com/14077108/218952371-d71500ba-681a-4889-a165-0d46d137a450.png)
+
 
 #### 4-1. 글꼴 설정
 
 ![image](https://user-images.githubusercontent.com/14077108/137455285-ced1a374-711b-4f4e-939c-55b6fb254955.png)
+![image](https://user-images.githubusercontent.com/14077108/218952407-4760dec7-5770-4008-9f18-56b2e13389cc.png)
 
 #### 4-2. 배경 설정
 
@@ -98,6 +131,9 @@
 #### 4-4. 폴더 설정
 
 ![폴더설정2](https://user-images.githubusercontent.com/14077108/137458530-4afe3e8f-83d5-4334-9897-1451bee9950b.png)
+![image](https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png)
+![image](https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png)
+
 
 - - -
 
@@ -108,6 +144,10 @@
 #### 5-1. 이미지 크기 설정
 
 ![크기설정3](https://user-images.githubusercontent.com/14077108/137459801-85afa6b5-619a-4f6b-b4cb-cec8b9c85d68.png)
+![image](https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png)
+
+![image](https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png)
+
 
 #### 5-2. 검색 초기화
 
@@ -120,5 +160,6 @@
 #### 5-4. 로그아웃
 
 ![image](https://user-images.githubusercontent.com/14077108/137480642-49a911f8-32d7-42ac-b612-1cee7e2ee1ac.png)
+![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
 
 
