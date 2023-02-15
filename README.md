@@ -22,7 +22,7 @@
 - 프로그램 실행 시 서버와 버전을 비교합니다.
 - 버전이 다를 경우, 서버에서 새로운 버전의 프로그램을 다운로드 합니다.
 
-![image](https://user-images.githubusercontent.com/14077108/218962758-9170f4a9-5ad6-4491-b8a1-4d84fa144891.png)
+  ![image](https://user-images.githubusercontent.com/14077108/218962758-9170f4a9-5ad6-4491-b8a1-4d84fa144891.png)
 
 ### 1. 로그인
 - 버전 체크 및 업데이트 성공 시 로그인 창이 뜹니다.
@@ -45,32 +45,26 @@
 
 ### 2. 메인
 - 로그인 성공 시 메인 창이 뜹니다.
-- 편집이 요청된 사진들로, 좌측에서 선택하면 우측에서 크게 볼 수 있습니다.
+- 편집 요청 리스트로, 좌측에서 선택하면 우측에서 크게 볼 수 있습니다.
 - 이전에 사용했던 환경설정이 그대로 유지된 상태입니다.\
   (창 크기, 리스트 이미지 크기, 리스트 컬럼 너비, 스플리터 간격, 글꼴, 테마 등)
 
-![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
-
+  ![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
 
 - 우클릭 메뉴
   - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
   - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
     - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
     - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
-
-
-
-  - 파일 다운로드: 
-
     
-    ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+  ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+
+  - 파일 다운로드: 사진을 로컬로 다운로드 합니다.
+    
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
 
-
-   
-    + 파일 저장 : 해상도별로 서버 → 로컬 다운로드
-
-    ![파일저장2](https://user-images.githubusercontent.com/14077108/137497969-f5bcf803-9621-4812-b61c-037adeb5df77.png)
+  - 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
+    
     ![image](https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png)
     ![image](https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png)
 
@@ -81,7 +75,7 @@
 
     + 전표 인쇄
 
-    ![image](https://user-images.githubusercontent.com/14077108/137460896-f0b2a993-2e0a-45e6-b2f4-64c97ab81e72.png)
+    
     ![image](https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png)
 
 - - -
