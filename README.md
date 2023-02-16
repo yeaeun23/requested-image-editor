@@ -107,13 +107,13 @@
 
 - 테마 설정: 총 5개 테마가 있으며, 포토샵 인터페이스 컬러와 동일하게 사용할 수 있습니다.
 
-  <img src="https://user-images.githubusercontent.com/14077108/219281220-bd9927a9-75c7-426d-b483-da6f2236a8aa.png" width="45%" align="top">&nbsp;&nbsp;
-  <img src="https://user-images.githubusercontent.com/14077108/219280976-04688ad8-d640-4179-b86b-fa3bd6894257.png" width="45%" align="top">  
+  <img src="https://user-images.githubusercontent.com/14077108/219286231-286f97dd-f844-4192-ba83-c205dc22e003.png" width="45%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219286321-9f5abc72-5b57-4e48-9c8d-d67513e199e9.png" width="45%" align="top">  
   
-  <img src="https://user-images.githubusercontent.com/14077108/219281025-2650dec2-8ff7-4a7e-8a90-c7f09730abf3.png" width="45%" align="top">&nbsp;&nbsp;
-  <img src="https://user-images.githubusercontent.com/14077108/219281049-34032c36-a169-4b0d-b2f7-4c3eed6c1947.png" width="45%" align="top">  
+  <img src="https://user-images.githubusercontent.com/14077108/219286371-8cfd6cbf-9392-407d-8fa4-bda8bd5bfed7.png" width="45%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219286418-3ec7452b-c989-43d4-b7cf-66d0fad93263.png" width="45%" align="top">  
   
-  <img src="https://user-images.githubusercontent.com/14077108/219281080-9dd0f203-a59f-475a-bfeb-5da91a02e08f.png" width="45%" align="top">
+  <img src="https://user-images.githubusercontent.com/14077108/219286466-1ab6a27d-3a49-4b36-a4f3-43af663adc4d.png" width="45%" align="top">
 
 - 리스트 배경 설정 (White, Black, Transparent)
 
@@ -123,7 +123,7 @@
 
   ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
-- 폴더 설정
+- 폴더 설정: 사진이 다운로드 되는 폴더로 마지막으로 지정한 경로가 유지됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
@@ -140,7 +140,7 @@
   <img src="https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png" width="45%" align="top">
 
 
-- 검색 초기화: 이미지 리스트 검색 옵션 초기화 (날짜, 상태 등)
+- 검색 초기화: 사진 리스트 검색 옵션 초기화 (날짜, 상태 등)
 
 - 새로고침: 메인화면 갱신 (이미지 리스트), 검색 컨트롤 값은 유지
 
