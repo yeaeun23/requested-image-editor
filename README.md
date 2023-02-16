@@ -146,8 +146,5 @@
 
 
 
-<br>
+https://user-images.githubusercontent.com/14077108/219297042-c3c62f27-acfd-4681-8998-61815d818347.mp4
 
-## 주요 코드
-
-### 1. 
