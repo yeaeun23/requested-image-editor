@@ -83,22 +83,21 @@
 
   <img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
+  
   ![image](https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png)
 
 - 포토샵으로 사진을 편집하면서 저장(Ctrl+S)할 때마다 원본과 비교할 수 있도록 작업창에 반영됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218951995-fc0cc651-a46b-4dad-91af-84e1fe44ab42.png" width="50%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952012-4222f11b-ec86-4495-943e-c03f3fdafd7b.png" width="40%" align="top">
+  
   ![image](https://user-images.githubusercontent.com/14077108/219278883-618b8a55-e9cb-4e8a-94e4-bc40d6443a3c.png)
 
 
-- 아이콘 상태 변화
+- 작업중 또는 출고(편집 및 전송 완료) 상태에 따라 아이콘과 상태 메시지가 달라지기 때문에 충돌을 방지합니다.
 
-![작업12](https://user-images.githubusercontent.com/14077108/137514007-5452a3e7-8cd2-4eda-ab3a-8087e2038eea.png)
-
-![작업13](https://user-images.githubusercontent.com/14077108/137514457-67939ed9-1e08-4141-ad8e-09553c7208ab.png)
-
-![작업](https://user-images.githubusercontent.com/14077108/137519778-226dca2a-46d5-48b4-abdc-703fc1d047bb.png)
+  ![작업12](https://user-images.githubusercontent.com/14077108/137514007-5452a3e7-8cd2-4eda-ab3a-8087e2038eea.png)
+  ![작업13](https://user-images.githubusercontent.com/14077108/137514457-67939ed9-1e08-4141-ad8e-09553c7208ab.png)
 
 <br>
 
@@ -111,11 +110,21 @@
 
 ![image](https://user-images.githubusercontent.com/14077108/218952407-4760dec7-5770-4008-9f18-56b2e13389cc.png)
 
-#### 4-2. 배경 설정
+#### 4-2. 테마 설정
+- 총 5개 테마가 있으며, 포토샵 인터페이스 컬러와 동일합니다.
+
+  <img src="https://user-images.githubusercontent.com/14077108/219281220-bd9927a9-75c7-426d-b483-da6f2236a8aa.png" width="45%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219280976-04688ad8-d640-4179-b86b-fa3bd6894257.png" width="45%" align="top">  
+  <img src="https://user-images.githubusercontent.com/14077108/219281025-2650dec2-8ff7-4a7e-8a90-c7f09730abf3.png" width="45%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219281049-34032c36-a169-4b0d-b2f7-4c3eed6c1947.png" width="45%" align="top">  
+  <img src="https://user-images.githubusercontent.com/14077108/219281080-9dd0f203-a59f-475a-bfeb-5da91a02e08f.png" width="45%" align="top">
+
+
+#### 4-3. 리스트 배경 설정
 
 ![테마6](https://user-images.githubusercontent.com/14077108/137455678-6f06cd18-3eb9-400f-a13d-13049ab48cb7.png)
 
-#### 4-3. 아이콘 설정
+#### 4-4. 리스트 아이콘 설정
 
 ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)
 
@@ -123,10 +132,10 @@
     
 ![아이콘가이드](https://user-images.githubusercontent.com/14077108/137486990-caf6d5e5-8a77-4cf8-b703-758d2749d19b.jpg)
 
-#### 4-4. 폴더 설정
+#### 4-5. 폴더 설정
 
-![image](https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png)
-![image](https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png)
+<img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
 
 <br>
 
@@ -134,7 +143,7 @@
 
 ![기타1](https://user-images.githubusercontent.com/14077108/137480331-a6a0f902-6275-4ad1-9eac-005501935be0.png)
 
-#### 5-1. 이미지 크기 설정
+#### 5-1. 사진 리스트 크기 설정
 
 <img src="https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png" width="45%" align="top">&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png" width="45%" align="top">
@@ -142,7 +151,7 @@
 
 #### 5-2. 검색 초기화
 
-- 이미지 리스트 컨트롤 값 초기화 (날짜, 상태 등)
+- 이미지 리스트 검색 옵션 초기화 (날짜, 상태 등)
 
 #### 5-3. 새로고침
 - 메인화면 갱신 (이미지 리스트), 검색 컨트롤 값은 유지
