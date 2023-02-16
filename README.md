@@ -53,6 +53,13 @@
 
   ![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
 
+- 하단에서 사진 정보와 선택된 사진에 대한 작업 내역을 볼 수 있습니다.
+
+  ![image](https://user-images.githubusercontent.com/14077108/219302857-3ea090f8-90b8-4025-ac4e-5cfe98c2f1a2.png)
+
+  ![image](https://user-images.githubusercontent.com/14077108/219302971-3c8bc2c6-190c-4ba5-a13d-fd390dd6d8c8.png)
+
+
 - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
 - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
   - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
@@ -123,7 +130,7 @@
 
   ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
-- 폴더 설정: 사진이 다운로드 되는 폴더로, 마지막으로 지정한 경로가 유지됩니다.
+- 폴더 설정: 사진이 다운로드 되는 폴더로, 마지막 지정 경로가 유지됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
@@ -136,13 +143,13 @@
   <img src="https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png" width="45%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png" width="45%" align="top">
 
-- 로그아웃
+- 로그아웃 및 프로그램 재실행
 
   ![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
 
 <br>
 
-## 작업 동영상
+## 작업 영상
 
 
 
