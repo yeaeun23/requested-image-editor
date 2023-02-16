@@ -102,7 +102,7 @@
 ### 4. 환경설정
 - 글꼴 설정
 
-  ![image](https://user-images.githubusercontent.com/14077108/218952371-d71500ba-681a-4889-a165-0d46d137a450.png)
+  <img src="https://user-images.githubusercontent.com/14077108/218952371-d71500ba-681a-4889-a165-0d46d137a450.png" align="top">&nbsp;&nbsp;
   ![image](https://user-images.githubusercontent.com/14077108/218952407-4760dec7-5770-4008-9f18-56b2e13389cc.png)
 
 - 테마 설정: 총 5개 테마가 있으며, 포토샵 인터페이스 컬러와 동일하게 사용할 수 있습니다.
@@ -115,16 +115,13 @@
   
   <img src="https://user-images.githubusercontent.com/14077108/219281080-9dd0f203-a59f-475a-bfeb-5da91a02e08f.png" width="45%" align="top">
 
-- 리스트 배경 설정
+- 리스트 배경 설정 (White, Black, Transparent)
 
   ![테마6](https://user-images.githubusercontent.com/14077108/137455678-6f06cd18-3eb9-400f-a13d-13049ab48cb7.png)
 
-- 리스트 아이콘 설정
+- 리스트 아이콘 설정 (Rect, Round1, Round2)
 
-  ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)
-
-- 아이콘 종류 : 전표(전표 있음) / 작업중, 출고(편집 완료), 미출고(편집 전)
-    
+  ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
 - 폴더 설정
 
@@ -149,7 +146,7 @@
 
 - 로그아웃
 
-![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
+  ![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
 
 <br>
 
