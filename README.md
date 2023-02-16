@@ -36,12 +36,10 @@
   - 비밀번호를 다르게 입력한 경우
   
   ![image](https://user-images.githubusercontent.com/14077108/218952879-d860482f-ef0a-45a2-8c4c-65c45ef7e6b2.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
   ![image](https://user-images.githubusercontent.com/14077108/218953029-f2354877-0f17-4496-8f2e-42d4263f0e7e.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
   ![image](https://user-images.githubusercontent.com/14077108/218953056-32ee02ca-5467-4ffb-8fcd-a65b7d6ee046.png)
-
-
 
 ### 2. 메인
 - 로그인 성공 시 메인 창이 뜹니다.
@@ -74,10 +72,9 @@
   - 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
   - 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄할 수 있습니다.
 
-    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="60%" align="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-    <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="30%" align="top">           
-    
-    <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="60%" align="top">      
+    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="65%" align="top">&nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="25%" align="top">           
+      
     
 
 
