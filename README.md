@@ -56,16 +56,13 @@
 - 우클릭 메뉴
   - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
   - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
-  
-    ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
-  
     - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
-    
     - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
     
+    ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
   
 
-  - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (크기별로 3가지 구분)
+  - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (3가지 크기별로 구분)
     
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
     
@@ -84,25 +81,18 @@
 - 요청된 사진을 열면 포토샵과 함께 작업창이 뜹니다.
 - 이때 사진 크기별로 로컬 폴더에 각각 다운로드 됩니다.
 
-<img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
-
-![image](https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png)
-
-
+  <img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
+  ![image](https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png)
 
 - 포토샵으로 사진을 편집하면서 저장(Ctrl+S)할 때마다 원본과 비교할 수 있도록 작업창에 반영됩니다.
 
-![작업11](https://user-images.githubusercontent.com/14077108/137513155-e7765ba1-49ac-44ea-98b2-7d3edc6b0327.png)
-
-![image](https://user-images.githubusercontent.com/14077108/218951995-fc0cc651-a46b-4dad-91af-84e1fe44ab42.png)
-
-![image](https://user-images.githubusercontent.com/14077108/218952012-4222f11b-ec86-4495-943e-c03f3fdafd7b.png)
-
-![image](https://user-images.githubusercontent.com/14077108/218952023-5e808c79-896a-4359-83d1-ec3a0f6a20c6.png)
+  <img src="https://user-images.githubusercontent.com/14077108/218951995-fc0cc651-a46b-4dad-91af-84e1fe44ab42.png" width="50%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/218952012-4222f11b-ec86-4495-943e-c03f3fdafd7b.png" width="40%" align="top">
+  ![image](https://user-images.githubusercontent.com/14077108/219278883-618b8a55-e9cb-4e8a-94e4-bc40d6443a3c.png)
 
 
-- 상태 변화
+- 아이콘 상태 변화
 
 ![작업12](https://user-images.githubusercontent.com/14077108/137514007-5452a3e7-8cd2-4eda-ab3a-8087e2038eea.png)
 
