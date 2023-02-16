@@ -8,8 +8,8 @@
 
 ### 3. 프로그램 특징
 - 포토샵으로 사진을 편집하는 부서에서 사용하는 프로그램으로,\
-  '사진 편집 요청 확인 → 사진 다운로드 → 사진 편집 → 사진 업로드'까지의 작업을 수행합니다.
-- 포토샵에서 제공되는 '스크립트 이벤트 관리자' 기능을 활용해 연동합니다.
+  '사진 편집 요청 확인 → 사진 다운로드 → 사진 편집(포토샵) → 사진 업로드'까지의 작업을 수행합니다.
+- 포토샵에서 제공되는 '스크립트 이벤트 관리자' 기능을 활용해 변화를 감지합니다.
 - 지면 출력용 사진이기 때문에 'CMYK 모드' 및 'EPS 파일 확장자'를 처리합니다.
 - 사진 하나 당 크기가 다른 3개의 사진 파일로 나눠 내부적으로 처리합니다.\
   (Real, Preview, Thumbnail)
@@ -23,6 +23,8 @@
 - 버전이 다를 경우, 서버에서 새로운 버전의 프로그램을 다운로드 합니다.
 
   ![image](https://user-images.githubusercontent.com/14077108/218962758-9170f4a9-5ad6-4491-b8a1-4d84fa144891.png)
+
+<br>
 
 ### 1. 로그인
 - 버전 체크 및 업데이트 성공 시 로그인 창이 뜹니다.
@@ -40,6 +42,8 @@
   ![image](https://user-images.githubusercontent.com/14077108/218953029-f2354877-0f17-4496-8f2e-42d4263f0e7e.png)
 &nbsp;&nbsp;
   ![image](https://user-images.githubusercontent.com/14077108/218953056-32ee02ca-5467-4ffb-8fcd-a65b7d6ee046.png)
+
+<br>
 
 ### 2. 메인
 - 로그인 성공 시 메인 창이 뜹니다.
@@ -65,34 +69,29 @@
     
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
     
-    <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">
-    <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top">
- 
+    <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">&nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top"> 
     
   - 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
-  - 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄할 수 있습니다.
+  - 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄합니다.
 
-    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="65%" align="top">&nbsp;&nbsp;
-    <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="25%" align="top">           
+    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="70%" align="top">&nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="20%" align="top">           
       
-    
-
+<br>
 
 ### 3. 작업창
-- 우클릭 메뉴에서 파일 열기 or 더블 클릭 → 포토샵 실행 및 파일 로드 → 작업창 실행
+- 요청된 사진을 열면 포토샵과 함께 작업창이 뜹니다.
+- 이때 사진 크기별로 로컬 폴더에 각각 다운로드 됩니다.
 
-
-
-![image](https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png)
-
-![image](https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png)
+<img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
 
 ![image](https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png)
 
 
 
-- 포토샵으로 사진을 편집한 후 Ctrl+S를 누를 때마다 작업창에 반영됩니다. 
-
+- 포토샵으로 사진을 편집하면서 저장(Ctrl+S)할 때마다 원본과 비교할 수 있도록 작업창에 반영됩니다.
 
 ![작업11](https://user-images.githubusercontent.com/14077108/137513155-e7765ba1-49ac-44ea-98b2-7d3edc6b0327.png)
 
