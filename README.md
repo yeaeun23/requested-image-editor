@@ -57,13 +57,13 @@
 - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
   - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
   - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
-    
-  ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
   
-
+  <img src="https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png" width="40%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219291958-c441ce82-9829-46c2-8401-8d33eb77c189.png" width="50%" align="top">
+  
 - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (3가지 크기별로 구분)
     
-  ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
+  <img src="https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png" width="40%" align="top">
     
   <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top"> 
@@ -123,7 +123,7 @@
 
   ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
-- 폴더 설정: 사진이 다운로드 되는 폴더로 마지막으로 지정한 경로가 유지됩니다.
+- 폴더 설정: 사진이 다운로드 되는 폴더로, 마지막으로 지정한 경로가 유지됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
