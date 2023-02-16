@@ -58,12 +58,12 @@
   - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
   - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
   
-  <img src="https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png" width="40%" align="top">&nbsp;&nbsp;
-  <img src="https://user-images.githubusercontent.com/14077108/219291958-c441ce82-9829-46c2-8401-8d33eb77c189.png" width="50%" align="top">
+  <img src="https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png" width="30%" align="top">&nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/14077108/219291958-c441ce82-9829-46c2-8401-8d33eb77c189.png" width="60%" align="top">
   
 - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (3가지 크기별로 구분)
     
-  <img src="https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png" width="40%" align="top">
+  <img src="https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png" width="30%" align="top">
     
   <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top"> 
