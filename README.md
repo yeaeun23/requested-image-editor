@@ -100,17 +100,15 @@
 
 ![작업](https://user-images.githubusercontent.com/14077108/137519778-226dca2a-46d5-48b4-abdc-703fc1d047bb.png)
 
-
+<br>
 
 ### 4. 환경설정
 
-![환경설정](https://user-images.githubusercontent.com/14077108/137449977-a1b5af94-bf31-4797-ae61-d90c23a2c95d.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952371-d71500ba-681a-4889-a165-0d46d137a450.png)
 
 
 #### 4-1. 글꼴 설정
 
-![image](https://user-images.githubusercontent.com/14077108/137455285-ced1a374-711b-4f4e-939c-55b6fb254955.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952407-4760dec7-5770-4008-9f18-56b2e13389cc.png)
 
 #### 4-2. 배경 설정
@@ -127,12 +125,10 @@
 
 #### 4-4. 폴더 설정
 
-![폴더설정2](https://user-images.githubusercontent.com/14077108/137458530-4afe3e8f-83d5-4334-9897-1451bee9950b.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png)
 
-
-
+<br>
 
 ### 5. 기타
 
@@ -140,9 +136,8 @@
 
 #### 5-1. 이미지 크기 설정
 
-![image](https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png)
-
-![image](https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png)
+<img src="https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png" width="45%" align="top">&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png" width="45%" align="top">
 
 
 #### 5-2. 검색 초기화
@@ -155,11 +150,11 @@
 
 #### 5-4. 로그아웃
 
-![image](https://user-images.githubusercontent.com/14077108/137480642-49a911f8-32d7-42ac-b612-1cee7e2ee1ac.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
 
-### 6. 작업 동영상
+<br>
 
+## 작업 동영상
 
 
 
