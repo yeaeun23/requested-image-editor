@@ -131,18 +131,10 @@
 <br>
 
 ### 5. 기타
-
-![기타1](https://user-images.githubusercontent.com/14077108/137480331-a6a0f902-6275-4ad1-9eac-005501935be0.png)
-
 - 사진 리스트 크기 설정
 
   <img src="https://user-images.githubusercontent.com/14077108/218952760-f45b3d89-b102-4475-9f80-1e96bc23ebdd.png" width="45%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952726-52d13f62-73a8-44b0-a517-60aa1b8b8dbb.png" width="45%" align="top">
-
-
-- 검색 초기화: 사진 리스트 검색 옵션 초기화 (날짜, 상태 등)
-
-- 새로고침: 메인화면 갱신 (이미지 리스트), 검색 컨트롤 값은 유지
 
 - 로그아웃
 
