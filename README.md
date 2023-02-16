@@ -4,14 +4,14 @@
 - 개발 90%, 디자인 70%, 테스트 80%, 기획/DB설계 0%
 
 ### 2. 개발 기간
-- 2021.01 ~ 2021.04 / 2022.12 ~ 2023.01 (총 6개월)
+- 2021.01~2021.04, 2022.12~2023.01 (총 6개월)
 
 ### 3. 프로그램 특징
 - 포토샵으로 사진을 편집하는 부서에서 사용하는 프로그램으로,\
   '사진 편집 요청 확인 → 사진 다운로드 → 사진 편집 → 사진 업로드'까지의 작업을 수행합니다.
 - 포토샵에서 제공되는 '스크립트 이벤트 관리자' 기능을 활용해 연동합니다.
 - 지면 출력용 사진이기 때문에 'CMYK 모드' 및 'EPS 파일 확장자'를 처리합니다.
-- 사진 하나 당 크기가 다른 3개의 파일로 나눠 내부적으로 처리합니다.\
+- 사진 하나 당 크기가 다른 3개의 사진 파일로 나눠 내부적으로 처리합니다.\
   (Real, Preview, Thumbnail)
 
 <br>
@@ -54,20 +54,24 @@
 - 우클릭 메뉴
   - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
   - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
+  
+  ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+  
     - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
+    
     - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
     
-  ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+  
 
-  - 파일 다운로드: 사진을 로컬로 다운로드 합니다.
+  - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (크기별로)
     
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
-
-  - 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
     
-    ![image](https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png)
-    ![image](https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png)
-
+    <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">
+    <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top">
+ 
+    
+- 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
     + 전표 보기 : 웹뷰, 브라우저에서 열기
 
     <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="45%" align="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -171,3 +175,8 @@
 ![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
 
 
+<br>
+
+## 주요 코드
+
+### 1. 
