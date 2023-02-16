@@ -4,7 +4,7 @@
 - 개발 90%, 디자인 70%, 테스트 80%, 기획/DB설계 0%
 
 ### 2. 개발 기간
-- 2021.01~2021.04, 2022.12~2023.01 (총 6개월)
+- 2021.01 ~ 2021.04 / 2022.12 ~ 2023.01 (총 6개월)
 
 ### 3. 프로그램 특징
 - 포토샵으로 사진을 편집하는 부서에서 사용하는 프로그램으로,\
@@ -55,7 +55,7 @@
   - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
   - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
   
-  ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
+    ![image](https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png)
   
     - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
     
@@ -63,7 +63,7 @@
     
   
 
-  - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (크기별로)
+  - 파일 다운로드: 사진을 로컬로 다운로드 합니다. (크기별로 3가지 구분)
     
     ![image](https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png)
     
@@ -71,18 +71,15 @@
     <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top">
  
     
-- 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
-    + 전표 보기 : 웹뷰, 브라우저에서 열기
+  - 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
+  - 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄할 수 있습니다.
 
-    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="45%" align="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="45%" align="top">
-
-    + 전표 인쇄
-
+    <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="60%" align="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+    <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="30%" align="top">           
     
-    ![image](https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png)
+    <img src = "https://user-images.githubusercontent.com/14077108/218682735-be1f9b4d-1d8a-4cc9-a468-2c1b9190f227.png" width="60%" align="top">      
+    
 
-- - -
 
 ### 3. 작업창
 - 우클릭 메뉴에서 파일 열기 or 더블 클릭 → 포토샵 실행 및 파일 로드 → 작업창 실행
@@ -97,7 +94,8 @@
 
 
 
-- 편집 후 저장 → 출고
+- 포토샵으로 사진을 편집한 후 Ctrl+S를 누를 때마다 작업창에 반영됩니다. 
+
 
 ![작업11](https://user-images.githubusercontent.com/14077108/137513155-e7765ba1-49ac-44ea-98b2-7d3edc6b0327.png)
 
@@ -116,7 +114,7 @@
 
 ![작업](https://user-images.githubusercontent.com/14077108/137519778-226dca2a-46d5-48b4-abdc-703fc1d047bb.png)
 
-- - -
+
 
 ### 4. 환경설정
 
@@ -148,7 +146,7 @@
 ![image](https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png)
 
 
-- - -
+
 
 ### 5. 기타
 
@@ -173,6 +171,10 @@
 
 ![image](https://user-images.githubusercontent.com/14077108/137480642-49a911f8-32d7-42ac-b612-1cee7e2ee1ac.png)
 ![image](https://user-images.githubusercontent.com/14077108/218952810-7f1672e5-e160-4941-87bd-d689667f6881.png)
+
+### 6. 작업 동영상
+
+
 
 
 <br>
