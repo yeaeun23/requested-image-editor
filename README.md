@@ -50,6 +50,7 @@
 - 편집 요청 리스트로, 좌측에서 선택하면 우측에서 크게 볼 수 있습니다.
 - 이전에 사용했던 환경설정이 그대로 유지된 상태입니다.\
   (창 크기, 리스트 이미지 크기, 리스트 컬럼 너비, 스플리터 간격, 글꼴, 테마 등)
+- 날짜, 출고(편집 및 전송) 상태 등으로 검색 가능하며, 검색된 결과는 페이징 처리됩니다.
 
   ![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
 
@@ -60,8 +61,8 @@
   
 - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
 - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
-  - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
-  - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다.
+  - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다. (파일명 뒤에 -copy)
+  - 원화상 복사: 최초 요청된 사진 원본으로 복사합니다. (파일명 뒤에 -copy(o))
   
   <img src="https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png" width="30%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/219291958-c441ce82-9829-46c2-8401-8d33eb77c189.png" width="60%" align="top">
@@ -84,24 +85,27 @@
 ### 3. 작업창
 - 요청된 사진을 열면 포토샵과 함께 작업창이 뜹니다.
 - 이때 사진 크기별로 로컬 폴더에 각각 다운로드 됩니다.
-- 크롭(Crop) 요청일 경우, 작업창에 요청된 영역이 표시됩니다.
+- 크롭(Crop) 요청일 경우, 작업창에 요청된 영역이 빨간 선으로 표시됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
   
   <img src="https://user-images.githubusercontent.com/14077108/218951604-58f69054-ed76-480c-a0f7-8a1af4ea615d.png" width="90%" align="top">
 
-- 포토샵으로 사진을 편집하면서 저장(Ctrl+S)할 때마다 원본과 비교할 수 있도록 작업창에 반영됩니다.
+- 포토샵으로 사진을 편집하면서 저장(Ctrl+S)할 때마다, 원본과 비교할 수 있도록 작업창에 바로 반영됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218951995-fc0cc651-a46b-4dad-91af-84e1fe44ab42.png" width="50%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952012-4222f11b-ec86-4495-943e-c03f3fdafd7b.png" width="40%" align="top">
   
   <img src="https://user-images.githubusercontent.com/14077108/219278883-618b8a55-e9cb-4e8a-94e4-bc40d6443a3c.png" width="90%" align="top">
 
-- 작업중 또는 출고(편집 및 전송 완료) 상태에 따라 아이콘과 상태 메시지가 달라지기 때문에 작업자들간의 충돌을 방지합니다.
+- 작업중 또는 출고(편집 및 전송) 상태에 따라 아이콘과 상태 메시지가 달라져, 작업자들간의 충돌을 방지합니다.
 
   ![작업12](https://user-images.githubusercontent.com/14077108/137514007-5452a3e7-8cd2-4eda-ab3a-8087e2038eea.png)
   ![작업13](https://user-images.githubusercontent.com/14077108/137514457-67939ed9-1e08-4141-ad8e-09553c7208ab.png)
+
+- 중간 저장: 편집된 사진을 출고는 하지 않고, 서버에 임시로 저장합니다. (이어서 편집 가능)
+- 출고: 편집 완료된 사진을 서버로 전송합니다. (최종)
 
 <br>
 
@@ -111,7 +115,7 @@
   <img src="https://user-images.githubusercontent.com/14077108/218952371-d71500ba-681a-4889-a165-0d46d137a450.png" align="top">&nbsp;&nbsp;
   ![image](https://user-images.githubusercontent.com/14077108/218952407-4760dec7-5770-4008-9f18-56b2e13389cc.png)
 
-- 테마 설정: 총 5개 테마가 있으며, 포토샵 인터페이스 컬러와 동일하게 사용할 수 있습니다.
+- 테마 설정: 총 5개 테마가 있으며, 포토샵 인터페이스 컬러와 동일합니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/219286231-286f97dd-f844-4192-ba83-c205dc22e003.png" width="45%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/219286321-9f5abc72-5b57-4e48-9c8d-d67513e199e9.png" width="45%" align="top">  
@@ -129,7 +133,7 @@
 
   ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
-- 폴더 설정: 사진이 다운로드 되는 폴더로, 마지막 지정 경로가 유지됩니다.
+- 폴더 설정: 사진이 다운로드 되는 로컬 폴더로, 마지막 지정 경로가 유지됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
