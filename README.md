@@ -28,7 +28,7 @@
 
 ### 1. 로그인
 - 버전 체크 및 업데이트 성공 시 로그인 창이 뜹니다.
-- 아이디 저장 여부를 체크할 수 있습니다.
+- 아이디 저장 여부를 선택할 수 있습니다.
 
   ![image](https://user-images.githubusercontent.com/14077108/218674708-53483284-e8a6-4f54-9289-b4aead657cdd.png)
 
@@ -84,6 +84,7 @@
 ### 3. 작업창
 - 요청된 사진을 열면 포토샵과 함께 작업창이 뜹니다.
 - 이때 사진 크기별로 로컬 폴더에 각각 다운로드 됩니다.
+- 크롭(Crop) 요청일 경우, 작업창에 요청된 영역이 표시됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218951554-dbe91c7e-c902-473d-98e9-4225f2958744.png" width="50%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218951343-0b6da414-dccb-4c90-aaae-5ae04b978b6f.png" width="40%" align="top">
@@ -148,8 +149,4 @@
 <br>
 
 ## 작업 영상
-
-
-
-https://user-images.githubusercontent.com/14077108/219297042-c3c62f27-acfd-4681-8998-61815d818347.mp4
 
