@@ -53,13 +53,11 @@
 
   ![image](https://user-images.githubusercontent.com/14077108/218681459-d5bcd39f-0185-4cd7-8555-dca055cb38ab.png)
 
-- 하단에서 사진 정보와 선택된 사진에 대한 작업 내역을 볼 수 있습니다.
+- 하단에서 '사진 정보'와 선택된 사진에 대한 '작업 내역'을 볼 수 있습니다.
 
-  ![image](https://user-images.githubusercontent.com/14077108/219302857-3ea090f8-90b8-4025-ac4e-5cfe98c2f1a2.png)
-
-  ![image](https://user-images.githubusercontent.com/14077108/219302971-3c8bc2c6-190c-4ba5-a13d-fd390dd6d8c8.png)
-
-
+  <img src="https://user-images.githubusercontent.com/14077108/219302857-3ea090f8-90b8-4025-ac4e-5cfe98c2f1a2.png" height="220px">
+  <img src="https://user-images.githubusercontent.com/14077108/219302971-3c8bc2c6-190c-4ba5-a13d-fd390dd6d8c8.png" height="220px">
+  
 - 파일 열기: 서버에서 로컬로 사진을 다운로드 한 후, 포토샵으로 열어줍니다.
 - 파일 복사: 요청된 사진을 복사해 요청 리스트에 추가합니다.
   - 일반 복사: 마지막으로 편집된 사진 그대로 복사합니다.
