@@ -854,7 +854,7 @@ namespace ImageWork
                 }
                 else if (filename.StartsWith("change&"))    // ActiveDocument 변경한 경우
                 {
-                    if (Form1.photoshop.ActiveDocument.Name.StartsWith("zz-") && Form1.photoshop.ActiveDocument.FullName.StartsWith(Form1.originWorkFolderPath))
+                    if (Form1.photoshop.ActiveDocument.Name.StartsWith("zz-") && Form1.photoshop.ActiveDocument.FullName.StartsWith(Form1.realWorkFolderPath))
                     {
                         fileName = Path.GetFileNameWithoutExtension(Form1.photoshop.ActiveDocument.Name);
                         // 꼬마창 다시 로드
