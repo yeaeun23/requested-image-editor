@@ -67,15 +67,15 @@
   <img src="https://user-images.githubusercontent.com/14077108/218681708-12f32b1f-69b4-411c-910c-0d119cd25f37.png" width="30%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/219291958-c441ce82-9829-46c2-8401-8d33eb77c189.png" width="60%" align="top">
   
-- 파일 다운로드: 사진을 로컬로 다운로드 합니다. (3가지 크기별로 구분)
+- 파일 다운로드: 사진을 로컬로 다운로드 합니다. (3가지 크기별로 가능)
     
   <img src="https://user-images.githubusercontent.com/14077108/218681861-fe463612-0859-4e39-9b87-04b918bc3a1c.png" width="30%" align="top">
     
   <img src="https://user-images.githubusercontent.com/14077108/218682329-cc2c6763-45d3-4982-9902-a361cd5c1301.png" width="70%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218682386-16fffeb4-9e31-45ed-aa11-3de66aef47cd.png" width="20%" align="top"> 
     
-- 파일 삭제: 요청 리스트에서 없어지지만, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
-- 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄합니다.
+- 파일 삭제: 요청 리스트에서 없어지고, '상태: 휴지통'으로 검색하면 볼 수 있습니다.
+- 전표 보기: 요청된 사진을 전표 형태로 보고, 인쇄합니다. (웹 브라우저에서 열기 가능)
 
   <img src="https://user-images.githubusercontent.com/14077108/218682576-655a267e-0766-4f42-b021-fe32352294a0.png" width="70%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218682834-ff2ad39e-28cb-472e-b75b-78aa046544b7.png" width="20%" align="top">           
@@ -99,13 +99,13 @@
   
   <img src="https://user-images.githubusercontent.com/14077108/219278883-618b8a55-e9cb-4e8a-94e4-bc40d6443a3c.png" width="90%" align="top">
 
-- 작업중 또는 출고(편집 및 전송) 상태에 따라 아이콘과 상태 메시지가 달라져, 작업자들간의 충돌을 방지합니다.
+- 작업중 또는 출고 상태에 따라 아이콘과 상태 메시지가 달라져, 작업자들간의 충돌을 방지합니다.
 
   ![작업12](https://user-images.githubusercontent.com/14077108/137514007-5452a3e7-8cd2-4eda-ab3a-8087e2038eea.png)
   ![작업13](https://user-images.githubusercontent.com/14077108/137514457-67939ed9-1e08-4141-ad8e-09553c7208ab.png)
 
-- 중간 저장: 편집된 사진을 출고는 하지 않고, 서버에 임시로 저장합니다. (이어서 편집 가능)
-- 출고: 편집 완료된 사진을 서버로 전송합니다. (최종)
+- 중간 저장: 편집된 사진을 출고하진 않고, 서버에 임시로 저장합니다. (다시 열면 이어서 편집 가능)
+- 출고: 편집 완료된 사진을 서버로 최종 전송합니다.
 
 <br>
 
@@ -133,7 +133,7 @@
 
   ![테마7](https://user-images.githubusercontent.com/14077108/137455696-9a96d24c-0960-49a3-aecf-2267124a9353.png)    
 
-- 폴더 설정: 사진이 다운로드 되는 로컬 폴더로, 마지막 지정 경로가 유지됩니다.
+- 폴더 설정: 작업할 사진을 열 때 다운로드 되는 로컬 폴더로, 마지막 지정 경로가 유지됩니다.
 
   <img src="https://user-images.githubusercontent.com/14077108/218952548-196ad0a3-4869-4ebb-be93-3f1aff1bb976.png" width="60%" align="top">&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/14077108/218952615-31f1b530-1e54-4902-b147-4232bb725498.png" width="30%" align="top">
