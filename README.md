@@ -155,13 +155,12 @@
 
 ## 주요 기능 영상
 
-- 업데이트, 프로그램 실행, 
 https://user-images.githubusercontent.com/14077108/220572178-53dcab39-db3a-4ab6-b271-c9f9959bc0f4.mp4
 
-- 
+<br>
+
 https://user-images.githubusercontent.com/14077108/220572206-543c7505-0c68-4b9a-adc8-465b5867f52b.mp4
 
-- 
+<br>
+
 https://user-images.githubusercontent.com/14077108/220572230-617af09f-1cea-457d-92df-30671d660a70.mp4
-
-
